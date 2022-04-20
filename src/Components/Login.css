@@ -1,0 +1,34 @@
+@media all and (min-width: 480px) {
+  .loginBody {
+    background-image: url(/public//Group\ 160.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 657px;
+  }
+
+  img {
+    height: 370px;
+    margin-left: 659px;
+    margin-top: -364px;
+    width: 580px;
+  }
+
+  .Login {
+    padding: 60px 0;
+
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+
+  }
+
+  #text::placeholder {
+    color: #ffffff;
+
+  }
+
+}

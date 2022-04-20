@@ -1,0 +1,31 @@
+.signupbody {
+    background-image: url(/public//Group\ 160.png);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 657px;
+	padding: 40px 0;
+  }
+
+.wrapper .header {
+	max-width: 355px;
+	width: 100%;
+	height: auto;
+	margin: 110px auto;
+	margin-right: 806px;
+}
+
+
+.wrapper .header .form .input_field {
+	margin-bottom: 5px;
+}
+
+.wrapper .header .form .input_field .input {
+	width: 105%;
+	font-size: 12px;
+	border-radius: 3px;
+	padding: 10px;
+}
+
+
