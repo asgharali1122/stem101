@@ -49,7 +49,6 @@ const App = () => {
               <Route path="/profile" element={<Profile />} />
             </>
           )}
-          {/* <Route path="*" element={<Navigate to={auth ? "/game" : "/"} />} /> */}
         </Routes>
       </BrowserRouter>
     </>

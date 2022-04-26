@@ -3,6 +3,7 @@ import './style.css'
 import axios from 'axios'
 import { Typography } from '@material-ui/core'
 const baseUrl = "https://boardswitch.herokuapp.com/"
+
 export default function Signup() {
 	const [user_name, setUser_name] = useState("")
 	const [email, setUser_Email] = useState("")
@@ -10,9 +11,6 @@ export default function Signup() {
 	const [role, setUser_Role] = useState("student")
 	const [postal, setUser_Postal] = useState("")
 	const [district, setUser_District] = useState("")
-	// async function register(){
-	// let item ={user_name,email,password,role,postal,district}
-	// console.warn(item)
 	const register = async () => {
 		let item = { user_name, email, password, role, postal, district }
 		console.warn(item)
@@ -21,17 +19,6 @@ export default function Signup() {
 		let user = (await res).data
 		console.warn(user)
 	}
-	// 	let result = await fetch("http://localhost:5000/create_user/",{
-	// 		method:'POST',
-	// 		body: JSON.stringify(item),
-	// 		headers:{
-	// 			"Content-Type":'application/json',
-	// 			"Accept":'application/json',
-	// 		}
-	// 	})
-	// 	result = await result.json()
-	// 	console.warn("result",result)
-	// }
 	return (
 		<>
 			<div className="signupbody">

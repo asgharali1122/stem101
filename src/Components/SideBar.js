@@ -136,7 +136,6 @@ export default function SideBar() {
   const handleDrawerClose = () => {
     setOpen(false);
   };
-  // const navigate = useNavigate();
   const direction = (type) => {
 
     if (type == "games") {

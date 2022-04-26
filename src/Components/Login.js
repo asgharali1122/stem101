@@ -40,8 +40,6 @@ export default function Login({ authenticate }) {
     }
   }
 
-
-
   return (
     <div className="loginBody">
       <div className="Login">
@@ -103,7 +101,5 @@ export default function Login({ authenticate }) {
         </div>
       </div>
     </div>
-
-
   );
 }
