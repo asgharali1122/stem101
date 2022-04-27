@@ -31,12 +31,15 @@ export default function Signup() {
 	return (
 		<>
 			<div className="signupbody">
-					<div className="header">
 						<div className="top">
 							<div className="container-fluid">
 								<div className="row">
 									<div className="col-6">
-										<Typography><h1>Sign up</h1></Typography>
+										<Typography><h1 style={{
+											color: "whitesmoke",
+											marginLeft: "80px",
+											fontFamily: "Franklin Gothic, Demi"
+										}} >Sign up</h1></Typography>
 										<br />
 										<br />
 										<div className="form">
@@ -67,11 +70,11 @@ export default function Signup() {
 												</select>
 											</div>
 											<br />
-											<div  style={{ color: "white", backgroundColor: "#823606", height: "42px", width: "140px", marginLeft: "70px", fontFamily: "Franklin Gothic, Cond Medium" }} className="btn" onClick={register}>Sign Up
+											<div  style={{ color: "white", backgroundColor: "#823606", height: "42px", width: "140px", marginLeft: "270px", marginTop:"166px", fontFamily: "Franklin Gothic, Cond Medium" }} className="btn" onClick={register}>Sign Up
 											</div>
 											<br />
 											<br />
-											<p  style={{ color: "white", fontFamily: "Franklin Gothic Book, Regular", marginLeft: "30px" , position:"fixed" }}>Already Have An Account? <a href="/" style={{ color: "#FF6400" }}>Log In</a></p>
+											<p  style={{ color: "white", fontFamily: "Franklin Gothic Book, Regular", marginLeft: "240px" , position:"fixed", marginTop:"1%" }}>Already Have An Account? <a href="/" style={{ color: "#FF6400" }}>Log In</a></p>
 										</div>
 									</div>
 									<div className="col-6">
@@ -86,7 +89,6 @@ export default function Signup() {
 
 					</div>
 
-				</div>
 			
 
 		</>
