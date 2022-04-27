@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './style.css'
 import axios from 'axios'
 import { Typography } from '@material-ui/core'
+import { useNavigate } from "react-router-dom";
+
 const baseUrl = "https://boardswitch.herokuapp.com/"
 
 export default function Signup() {
@@ -11,10 +13,17 @@ export default function Signup() {
 	const [role, setUser_Role] = useState("student")
 	const [postal, setUser_Postal] = useState("")
 	const [district, setUser_District] = useState("")
+	let navigate = useNavigate();
 	const register = async () => {
+		
 		let item = { user_name, email, password, role, postal, district }
 		console.warn(item)
 		const res = axios.post(baseUrl + 'create_user/', item)
+		if (res.status === 200) {
+			navigate('/')
+		}else{
+			alert("Error")
+		}
 		console.warn((await res).data)
 		let user = (await res).data
 		console.warn(user)

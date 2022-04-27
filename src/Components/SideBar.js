@@ -16,7 +16,7 @@ import { alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
-
+import './sidebar.css';
 
 const drawerWidth = 240;
 const Search = styled('div')(({ theme }) => ({
