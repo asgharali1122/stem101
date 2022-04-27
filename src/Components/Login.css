@@ -1,9 +1,9 @@
 @media all and (min-width: 480px) {
   .loginBody {
-    background-image: url(/public//Group\ 160.png);
-    -webkit-background-size: cover;
+    background-image: url(/public/Group\ 160.png);
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover; */
     background-size: cover;
     height: 657px;
   }
@@ -23,7 +23,6 @@
   .Login form {
     margin: 0 auto;
     max-width: 320px;
-
   }
 
   #text::placeholder {
