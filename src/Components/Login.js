@@ -97,7 +97,7 @@ export default function Login({ authenticate }) {
           </div>
         </div>
         <div className="col-2">
-          <img src="Group 158.png" alt="group" />
+          <img className="group" src="/images/Group 158.png" alt="group" />
         </div>
       </div>
     </div>

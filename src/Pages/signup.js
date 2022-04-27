@@ -89,7 +89,7 @@ export default function Signup() {
 								</div>
 							</div>
 							<div className="col-2">
-								<img style={{ height: "370px", marginLeft: "480px", marginTop: "-580px", width: "580px" }} src="Group 158.png" alt="group" />
+								<img style={{ height: "370px", marginLeft: "480px", marginTop: "-580px", width: "580px" }} src="/images/Group 158.png" alt="group" />
 							</div>
 						</div>
 

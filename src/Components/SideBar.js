@@ -174,7 +174,7 @@ export default function SideBar() {
               >
                 <MenuIcon />
               </IconButton>
-              <img src='Logo.png' alt='alt-logo' style={{
+              <img src='/images/Logo.png' alt='alt-logo' style={{
                 width: "266px",
                 height: "41px",
                 paddingRight: "94px",
@@ -203,7 +203,7 @@ export default function SideBar() {
               </Toolbar>
             </div>
             <div className='col-2'>
-              <img src="harley.png" alt="alt-png" style={{
+              <img src="/images/harley.png" alt="alt-png" style={{
 
                 width: "85px",
                 height: "65px",
@@ -231,14 +231,14 @@ export default function SideBar() {
                   px: 2.5,
                 }}
               >
-                <img src='profile.png' alt='profile' style={{ width: "45px", height: "33px" }} />
+                <img src='/images/profile.png' alt='profile' style={{ width: "45px", height: "33px" }} />
                 <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
               </ListItemButton>
             ))}
           </List>
         </div>
         <div>
-          <div >
+          <div style={{backgroundColor:"#0D223F"}} >
             <List style={{ backgroundColor: "#0D223F" }} onClick={() => { direction("games") }}  >
               {['Games'].map((text, index) => (
                 <ListItemButton
@@ -249,7 +249,7 @@ export default function SideBar() {
                     px: 2.5,
                   }}
                 >
-                  <img src='game.png' alt='game' style={{ width: "45px", height: "33px" }} />
+                  <img src='/images/game-console.png' alt='game' style={{ width: "45px", height: "33px" }} />
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
                 </ListItemButton>
               ))}
@@ -268,7 +268,7 @@ export default function SideBar() {
                     px: 2.5,
                   }}
                 >
-                  <img src='district.png' alt='district' style={{ width: "45px", height: "33px" }} />
+                  <img src='/images/building.png' alt='district' style={{ width: "45px", height: "33px" }} />
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
                 </ListItemButton>
               ))}
@@ -287,7 +287,7 @@ export default function SideBar() {
                     px: 2.5,
                   }}
                 >
-                  <img src='teacher.png' alt='teacher' style={{ width: "45px", height: "33px" }} />
+                  <img src='/images/Layer-41.png' alt='teacher' style={{ width: "45px", height: "33px" }} />
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
                 </ListItemButton>
               ))}
@@ -306,7 +306,7 @@ export default function SideBar() {
                     px: 2.5,
                   }}
                 >
-                  <img src='student.png' alt='student' style={{ width: "45px", height: "33px" }} />
+                  <img src='/images/Layer-51.png' alt='student' style={{ width: "45px", height: "33px" }} />
                   <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
                 </ListItemButton>
               ))}
