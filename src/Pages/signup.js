@@ -23,18 +23,10 @@ export default function Signup() {
 		const res = axios.post(baseUrl + 'create_user/', item)
 		console.warn((await res).status)
 		if (res.status = 200) {
-			localStorage.setItem("username", user_name);
-      		localStorage.setItem("password", password);
-      		localStorage.setItem("email", email);
-			localStorage.setItem("user", true);
-			console.warn("apihit")
 			nav('/')
 		}else{
 			alert("Error")
 		}
-		console.warn(await res)
-		let user = (await res).data
-		console.warn(user)
 	}
 	return (
 		<>

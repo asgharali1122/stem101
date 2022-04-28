@@ -45,13 +45,8 @@ export default function Login({ authenticate }) {
       <div className="Login">
         <div className="container-fluid">
           <div className="row">
-            <div className="col-11">
-              <Form onSubmit={handleSubmit} style={{ marginTop: "154px", marginRight: "780px" }}>
-                <Typography><h1 style={{
-                  color: "whitesmoke",
-                  marginLeft: "100px",
-                  fontFamily: "Franklin Gothic, Demi"
-                }}>Log in</h1></Typography>
+            <div className="col-6">  <Form onSubmit={handleSubmit}>
+                <Typography><h1 >Log in</h1></Typography>
                 <br />
                 <br />
                 <Form.Group size="lg" controlId="email">
@@ -60,12 +55,6 @@ export default function Login({ authenticate }) {
                     type="text"
                     id="text"
                     placeholder="User Name"
-                    style={{
-                      backgroundColor: "#707070",
-                      opacity: "0.23",
-                      border: "1px solid #707070",
-                      borderRadius: "4px",
-                    }}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />
@@ -77,28 +66,28 @@ export default function Login({ authenticate }) {
                     value={password}
                     id="text"
                     placeholder="Password"
-                    style={{
-                      backgroundColor: "#707070",
-                      opacity: "0.23",
-                      border: "1px solid #707070",
-                      borderRadius: "4px",
-                    }}
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Group>
                 <br />
-                <Button block size="lg" style={{ color: "white", backgroundColor: "#823606", height: "53px", width: "183px", marginLeft: "66px", fontFamily: "Franklin Gothic, Demi" }} disabled={!validateForm()} onClick={login}>
+                <Button block size="lg"  disabled={!validateForm()} onClick={login}>
                   Log in
                 </Button>
+                <p>don't have an account, <a href="/signup" style={{ color: "#FF6400" }}>Sign up</a></p>
+            
               </Form>
-              <br />
-              <p style={{ color: "white", fontFamily: "Franklin Gothic Book, Regular", marginLeft: "203px" }}>don't have an account, <a href="/signup" style={{ color: "#FF6400" }}>Sign up</a></p>
+              </div>
+            <div className="col-6" >
+              <div className="logoimg" style={{ 'overflow':'hidden'}}>
+              <img src="/images/Group 158.png" alt="group"/>
+              </div>
+            
             </div>
+            
           </div>
+         
         </div>
-        <div className="col-2">
-          <img className="group" src="/images/Group 158.png" alt="group" />
-        </div>
+       
       </div>
     </div>
   );

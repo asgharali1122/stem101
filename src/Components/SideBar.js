@@ -214,14 +214,14 @@ export default function SideBar() {
           </div>
         </div>
       </AppBar>
-      <Drawer variant="permanent" open={open}>
-        <DrawerHeader style={{ backgroundColor: "#0D223F" }}>
+      <Drawer variant="permanent"  open={open}>
+        <DrawerHeader >
           <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
         <div onClick={() => { window.location.href = "/profile"; }} >
-          <List style={{ backgroundColor: "#0D223F" }}  >
+          <List  >
             {['Profile'].map((text, index) => (
               <ListItemButton
                 key={text}
@@ -238,8 +238,8 @@ export default function SideBar() {
           </List>
         </div>
         <div>
-          <div style={{backgroundColor:"#0D223F"}} >
-            <List style={{ backgroundColor: "#0D223F" }} onClick={() => { direction("games") }}  >
+          <div  >
+            <List  onClick={() => { direction("games") }}  >
               {['Games'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -258,7 +258,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/district"; }}>
-            <List style={{ backgroundColor: "#0D223F" }}  >
+            <List  >
               {['District'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -277,7 +277,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/teacher"; }}>
-            <List style={{ backgroundColor: "#0D223F" }}  >
+            <List >
               {['Teachers'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -296,7 +296,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/student"; }}>
-            <List style={{ backgroundColor: "#0D223F" }}  >
+            <List >
               {['Students'].map((text, index) => (
                 <ListItemButton
                   key={text}
