@@ -121,7 +121,7 @@ export default function Student() {
           )
         })
       }
-      <div >
+      <div>
         <div style={{ margin: "50px", marginLeft: "250px" }}>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >
             <TableContainer sx={{ maxHeight: 440 }} >

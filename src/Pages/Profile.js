@@ -9,7 +9,7 @@ export default function Profile() {
   const password = localStorage.getItem("password");
   const email = localStorage.getItem("email");
   const date = localStorage.getItem("date_joined");
-  console.warn("ayhyyy", username)
+
 
   return (
 
@@ -66,7 +66,7 @@ export default function Profile() {
           <Form.Group size="lg" controlId="password">
             <Form.Control
               type="password"
-              value={password}
+              placeholder="new Password here"
 
               style={{
                 backgroundColor: "#CFCFCF",
