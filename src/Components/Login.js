@@ -36,7 +36,7 @@ export default function Login({ authenticate }) {
       }
       authenticate();
       console.warn("apihit")
-      nav('/student')
+      nav('/profile')
     }
   }
 

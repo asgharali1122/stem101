@@ -18,7 +18,6 @@ export default function Profile() {
         <Typography><h1 style={{ textAlign: "center" }}>Profile</h1></Typography>
         <br />
         <div className="user">
-          <Typography > <h4 style={{ textAlign: "center" }}> Harley </h4>  </Typography>
         </div>
         <Form.Group size="lg" controlId="email">
           <div className="name">
