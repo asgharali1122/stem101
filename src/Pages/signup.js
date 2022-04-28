@@ -92,6 +92,7 @@ export default function Signup() {
 													<option>Student</option>
 													<option>District</option>
 													<option>Teacher</option>
+													<option>Game</option>
 
 												</select>
 											</div>
