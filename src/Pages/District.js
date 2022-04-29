@@ -112,10 +112,10 @@ export default function District() {
 
   return (
     <>
-    <h1 style={{color:"black", marginLeft:"46%" , marginRight:"100px", marginTop:"70px"}}> District </h1>
       <div style={{marginTop:"80px"}}>
         <div style={{ margin: "50px", marginLeft: "250px", }}>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+          <h3 className="text-center">District</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Table stickyHeader aria-label="sticky table" >
                 <TableHead>
@@ -134,12 +134,11 @@ export default function District() {
                 </TableHead>
                 <TableBody>
                   {
-                    data?.map((row) => {
-
+                    data?.map((row , index) => {
                       return (
                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
                           <TableCell key={row.id} align={row.align}>
-                            {row.id}
+                            {index+1}
                           </TableCell>
                           <TableCell key={row.district} align={row.district}>
                             {row.district}
@@ -147,8 +146,8 @@ export default function District() {
                           <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
                             {row.category}
                           </TableCell>
-                          <div className="row">
-                            <div className='col 2'>
+                          <div className="d-flex flex-row">
+                            <div className='p-2 '>
                               <Grid item xs={4}>
                                 <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
                                 <Modal
@@ -180,7 +179,7 @@ export default function District() {
                                 </Modal>
                               </Grid>
                             </div>
-                            <div className='col 2'>
+                            <div className='p-2'>
                               <Grid item xs={8} onClick={() => remove(row.id)}>
                               <div style={{
                                   color:"red",
