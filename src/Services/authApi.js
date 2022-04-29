@@ -40,7 +40,7 @@ const mlogin = async (data1) => {
 const register = async (data) => {
   try {
     console.log("register++", data)
-    return await axios.post(baseurl + 'register/', data);
+    return await axios.post(baseurl + 'create_user/', data);
 
   } catch (error) {
     return error;

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css";
+import authApi from "../Services/authApi"
 import axios from "axios";
 import { Typography } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
@@ -18,19 +19,22 @@ export default function Signup() {
   const register = async () => {
     let item = { user_name, email, password, role, postal, district };
     console.warn(item);
-    const res = axios.post(baseUrl + "create_user/", item);
-	console.log("res.status", res.response.status)
-    // if ((res.status = 200)) {
+    const res = await authApi.register(item)
+	console.log("response",res)
+	console.log("res.status",res.response.status)
+	console.log("if in this condition",res.status)
+    if ((res.response.status = 400)) {
 
-    //   nav("/login");
-    // } 
-	// else if ((res.status = 400)) {
-	// 	alert("username already exists")
-	//   } 
-	// else {
-	// 	console.warn("in else")
-    //   	alert("Error something went wrong");
-    // }
+		alert("username already exists")
+    } 
+	else if ((res.status = 200)) {
+		
+		nav("/login");
+	  } 
+	else {
+		console.warn("in else")
+      	alert("Error something went wrong");
+    }
   };
   return (
     <>
