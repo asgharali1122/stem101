@@ -112,18 +112,6 @@ export default function Student() {
 
   return (
     <>
-
-      {
-        data?.map((index) => {
-
-          return (
-            <ul >
-              <li >{index.id}</li>
-              <li>{index.skill}</li>
-            </ul>
-          )
-        })
-      }
       <div>
         <div style={{ margin: "50px", marginLeft: "250px" }}>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >

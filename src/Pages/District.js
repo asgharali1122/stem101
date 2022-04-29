@@ -89,8 +89,9 @@ export default function District() {
     setPage(0);
   };
   const fetchingdata = async () => {
-    const datasend = { 'role': 'distict' }
+    const datasend = { 'role': 'district' }
     const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
+    
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)

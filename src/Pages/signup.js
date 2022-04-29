@@ -4,7 +4,7 @@ import authApi from "../Services/authApi"
 import axios from "axios";
 import { Typography } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
-
+import { ToastContainer, toast } from 'react-toastify';
 const baseUrl = "https://boardswitch.herokuapp.com/";
 
 export default function Signup() {
@@ -18,30 +18,26 @@ export default function Signup() {
   let navigate = useNavigate();
   const register = async () => {
     let item = { user_name, email, password, role, postal, district };
-    console.warn(item);
     const res = await authApi.register(item)
-	console.log("response",res)
-	console.log("res.status",res.response.status)
-	console.log("if in this condition",res.status)
-    if ((res.response.status = 400)) {
 
-		alert("username already exists")
-    } 
-	else if ((res.status = 200)) {
-		
-		nav("/login");
-	  } 
-	else {
-		console.warn("in else")
-      	alert("Error something went wrong");
-    }
+  if (res.status == 200){
+    toast.success("Account Created Successfully")
+    alert("Account Created Successfully")
+    navigate("/login")
+  }
+  else if (res.response.status == 400){
+    toast.error("user already exists")
+    alert("user already exists")
+  }
   };
   return (
     <>
       <div className="signupbody">
         <div className="top">
           <div className="container-fluid">
+            
             <div className="row">
+            {/* <ToastContainer /> */}
               <div className="col-6" style={{ marginTop: "11%" }}>
                 <Typography>
                   <h1
