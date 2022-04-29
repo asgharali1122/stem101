@@ -147,8 +147,8 @@ export default function District() {
                           <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
                             {row.category}
                           </TableCell>
-                          <div className="row">
-                            <div className='col 2'>
+                          <div className="d-flex flex-row">
+                            <div className='p-2 '>
                               <Grid item xs={4}>
                                 <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
                                 <Modal
@@ -180,7 +180,7 @@ export default function District() {
                                 </Modal>
                               </Grid>
                             </div>
-                            <div className='col 2'>
+                            <div className='p-2'>
                               <Grid item xs={8} onClick={() => remove(row.id)}>
                               <div style={{
                                   color:"red",
