@@ -113,20 +113,11 @@ export default function Teacher() {
   return (
     <>
       <SideBar />
-      {
-        data?.map((index) => {
-
-          return (
-            <ul>
-              <li>{index.id}</li>
-              <li>{index.skill}</li>
-            </ul>
-          )
-        })
-      }
+      
       <div>
         <div style={{ margin: "50px", marginLeft: "250px" }}>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+          <h3 className="text-center">Teacher</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Table stickyHeader aria-label="sticky table">
                 <TableHead>
@@ -145,12 +136,12 @@ export default function Teacher() {
                 </TableHead>
                 <TableBody>
                   {
-                    data?.map((row) => {
+                    data?.map((row, index) => {
 
                       return (
                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
                           <TableCell key={row.id} align={row.align}>
-                            {row.id}
+                            {index+1}
                           </TableCell>
                           <TableCell key={row.teacher} align={row.teacher}>
                             {row.teacher}
@@ -158,10 +149,10 @@ export default function Teacher() {
                           <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
                             {row.category}
                           </TableCell>
-                          <div className="row">
-                            <div className='col 2'>
+                          <div className="d-flex flex-row">
+                            <div className='p-2'>
                               <Grid item xs={4}>
-                                <Button onClick={handleOpen}><AddCircleOutlineIcon /></Button>
+                              <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
                                 <Modal
                                   open={open}
                                   onClose={handleClose}
@@ -191,12 +182,12 @@ export default function Teacher() {
                                 </Modal>
                               </Grid>
                             </div>
-                            <div className='col 2'>
+                            <div className='p-2'>
                               <Grid item xs={8} onClick={() => remove(row.id)}>
                               <div style={{
                                   color:"red",
                                 }} >
-                                <DeleteIcon />
+                               <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"10px"}} />
                                 </div>
                               </Grid>
                             </div>

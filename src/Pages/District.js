@@ -112,10 +112,10 @@ export default function District() {
 
   return (
     <>
-    <h1 style={{color:"black", marginLeft:"46%" , marginRight:"100px", marginTop:"70px"}}> District </h1>
       <div style={{marginTop:"80px"}}>
         <div style={{ margin: "50px", marginLeft: "250px", }}>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+          <h3 className="text-center">District</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Table stickyHeader aria-label="sticky table" >
                 <TableHead>
@@ -134,12 +134,11 @@ export default function District() {
                 </TableHead>
                 <TableBody>
                   {
-                    data?.map((row) => {
-
+                    data?.map((row , index) => {
                       return (
                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
                           <TableCell key={row.id} align={row.align}>
-                            {row.id}
+                            {index+1}
                           </TableCell>
                           <TableCell key={row.district} align={row.district}>
                             {row.district}
