@@ -9,6 +9,7 @@ import Signup from "./Pages/signup";
 import Student from "./Pages/Student";
 import Teacher from "./Pages/Teacher";
 import Profile from "./Pages/Profile";
+import StartPage from "./Pages/StartPage";
 
 const App = () => {
   const [auth, setAuth] = useState(null);
@@ -31,11 +32,14 @@ const App = () => {
         <Routes>
           {!auth && (
             <Route
-              path="/"
-              element={<Login authenticate={() => setAuth(true)} />
-              }
-            />
-          )}
+              path="/login"
+              element={<Login authenticate={() => setAuth(true)}/> }
+              
+              />
+            
+)}
+          
+          <Route path="/" element={<StartPage/>}/>
           <Route path="/signup" element={<Signup />} />
           {auth && (
             <>

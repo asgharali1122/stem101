@@ -25,18 +25,24 @@ export default function Login({ authenticate }) {
     console.warn(item)
     const res = await authApi.login(item)
     console.warn(res.data)
+    console.warn("statuscode",res.status)
+    if((res.status)){
+      if (res.data.username) {
+        localStorage.setItem("username", res.data.username);
+        localStorage.setItem("password", res.data.password);
+        localStorage.setItem("date_joined", res.data.date_joined);
+        if (res.data.email) {
+          localStorage.setItem("email", res.data.email);
 
-    if (res.data.username) {
-      localStorage.setItem("username", res.data.username);
-      localStorage.setItem("password", res.data.password);
-      localStorage.setItem("date_joined", res.data.date_joined);
-      if (res.data.email) {
-        localStorage.setItem("email", res.data.email);
-
+        }
+        authenticate();
+        console.warn("apihit")
+        nav('/profile')
       }
-      authenticate();
-      console.warn("apihit")
-      nav('/profile')
+    }
+    else{
+      console.warn("in else")
+      alert("Error something went wrong");
     }
   }
 
