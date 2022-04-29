@@ -112,7 +112,8 @@ export default function District() {
 
   return (
     <>
-      <div style={{marginTop:"150px"}}>
+    <h1 style={{color:"black", marginLeft:"46%" , marginRight:"100px", marginTop:"70px"}}> District </h1>
+      <div style={{marginTop:"80px"}}>
         <div style={{ margin: "50px", marginLeft: "250px", }}>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -149,7 +150,7 @@ export default function District() {
                           <div className="row">
                             <div className='col 2'>
                               <Grid item xs={4}>
-                                <Button onClick={handleOpen}><AddCircleOutlineIcon /></Button>
+                                <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
                                 <Modal
                                   open={open}
                                   onClose={handleClose}
@@ -184,7 +185,7 @@ export default function District() {
                               <div style={{
                                   color:"red",
                                 }} >
-                                <DeleteIcon />
+                                <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"10px"}} />
                                 </div>
                               </Grid>
                             </div>
