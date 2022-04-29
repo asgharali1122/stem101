@@ -185,7 +185,7 @@ export default function District() {
                               <div style={{
                                   color:"red",
                                 }} >
-                                <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"10px"}} />
+                                <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"2px"}} />
                                 </div>
                               </Grid>
                             </div>

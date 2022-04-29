@@ -62,15 +62,14 @@ export default function Login({ authenticate }) {
                 <br />
                 <Form.Group size="lg" controlId="email">
                   <Form.Control
-                    autoFocus
                     type="text"
                     id="text"
                     placeholder="User Name"
                     style={{
-                      backgroundColor:"#707070",
-                      opacity:"0.23",
-                      border:"1px solid #707070",
-                      borderRadius:"4px",
+                     backgroundColor: "#707070",
+                     border:"1px rbg(100 93 93)",
+                     borderRadius:"4px",
+                     textDecorationColor:"white"
                     }}
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -84,10 +83,10 @@ export default function Login({ authenticate }) {
                     id="text"
                     placeholder="Password"
                     style={{
-                      backgroundColor:"#707070",
-                      opacity:"0.23",
-                      border:"1px solid #707070",
-                      borderRadius:"4px",
+                      backgroundColor: "#707070",
+                     border:"1px rbg(100 93 93)",
+                     borderRadius:"4px",
+                     textDecorationColor:"white"
                     }}
                     onChange={(e) => setPassword(e.target.value)}
                   />

@@ -35,15 +35,14 @@ export default function Signup() {
       <div className="signupbody">
         <div className="top">
           <div className="container-fluid">
-            
             <div className="row">
             {/* <ToastContainer /> */}
-              <div className="col-6" style={{ marginTop: "11%" }}>
+              <div className="col-6" style={{ marginTop: "7%" }}>
                 <Typography>
                   <h1
                     style={{
                       color: "whitesmoke",
-                      marginLeft: "80px",
+                      marginLeft: "215px",
                       fontFamily: "Franklin Gothic, Demi",
                     }}
                   >
@@ -52,7 +51,7 @@ export default function Signup() {
                 </Typography>
                 <br />
                 <br />
-                <div className="form">
+                <div className="form" style={{marginLeft:"200px"}}>
                   <div className="input_field">
                     <input
                       type="text"
@@ -62,6 +61,15 @@ export default function Signup() {
                       className="input"
                       name="user_name"
                       id="user_name"
+                      style={{
+                        backgroundColor: "#707070",
+                        border:"1px rbg(100 93 93)",
+                        borderRadius:"4px",
+                        textDecorationColor:"white",
+                        width:"240px",
+                        height:"43px"
+                      
+                      }}
                     />
                   </div>
                   <br />
@@ -74,6 +82,14 @@ export default function Signup() {
                       className="input"
                       name="email"
                       id="email"
+                      style={{
+                        backgroundColor: "#707070",
+                        border:"1px rbg(100 93 93)",
+                        borderRadius:"4px",
+                        textDecorationColor:"white",
+                        width:"240px",
+                        height:"43px"
+                      }}
                     />
                   </div>
                   <br />
@@ -86,6 +102,14 @@ export default function Signup() {
                       className="input"
                       name="password"
                       id="password"
+                      style={{
+                        backgroundColor: "#707070",
+                     border:"1px rbg(100 93 93)",
+                     borderRadius:"4px",
+                     textDecorationColor:"white",
+                     width:"240px",
+                        height:"43px"
+                      }}
                     />
                   </div>
                   <br />
@@ -117,7 +141,7 @@ export default function Signup() {
                       backgroundColor: "#823606",
                       height: "42px",
                       width: "140px",
-                      marginLeft: "251px",
+                      marginLeft: "9px",
                       marginTop: "13px",
                       fontFamily: "Franklin Gothic, Cond Medium",
                     }}
@@ -132,13 +156,13 @@ export default function Signup() {
                     style={{
                       color: "white",
                       fontFamily: "Franklin Gothic Book, Regular",
-                      marginLeft: "240px",
+                      marginLeft: "2px",
                       position: "fixed",
                       marginTop: "1%",
                     }}
                   >
                     Already Have An Account?{" "}
-                    <a href="/" style={{ color: "#FF6400" }}>
+                    <a href="/login" style={{ color: "#FF6400" }}>
                       Log In
                     </a>
                   </p>
