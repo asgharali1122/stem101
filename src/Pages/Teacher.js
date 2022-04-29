@@ -89,7 +89,7 @@ export default function Teacher() {
     setRowsPerPage(+event.target.value);
     setPage(0);
   };
-  useEffect(async () => {
+  const fetchingdata = async () => {
     const datasend = { 'role': 'teacher' }
     const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
     if (res.status = 200) {
@@ -97,15 +97,18 @@ export default function Teacher() {
       setData(res.data)
 
     }
+  }
+  useEffect(async () => {
+    fetchingdata()
   }, [])
 
   const [id, setId] = useState()
   const remove = async (id) => {
-    console.warn('remove', id)
     const datasend = { 'id': id, 'role': 'teacher' }
     const res = await axios.post("https://boardswitch.herokuapp.com/delete_user/", datasend)
-    console.warn(res)
+    fetchingdata()
   }
+
 
   return (
     <>
