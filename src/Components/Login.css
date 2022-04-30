@@ -1,9 +1,6 @@
 @media all and (min-width: 480px) {
   .loginBody {
     background-image: url(/public/Group\ 160.png);
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
     background-size: cover;
     height: 657px;
   }

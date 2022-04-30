@@ -150,7 +150,7 @@ export default function SideBar() {
     localStorage.clear();
     localStorage.setItem("user", false);
     console.warn("after user false");
-    window.location.href = "/";
+    window.location.href = "/login";
   }
   const onProfile = async () => {
     console.warn(data)
