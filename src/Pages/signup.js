@@ -3,9 +3,11 @@ import "./style.css";
 import authApi from "../Services/authApi"
 import axios from "axios";
 import { Typography } from "@material-ui/core";
+import Form from "react-bootstrap/Form";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 const baseUrl = "https://boardswitch.herokuapp.com/";
+
 
 export default function Signup() {
   const [user_name, setUser_name] = useState("");
@@ -53,64 +55,61 @@ export default function Signup() {
                 <br />
                 <div className="form" style={{marginLeft:"200px"}}>
                   <div className="input_field">
-                    <input
-                      type="text"
-                      value={user_name}
-                      onChange={(e) => setUser_name(e.target.value)}
-                      placeholder="Username"
-                      className="input"
-                      name="user_name"
-                      id="user_name"
-                      style={{
-                        backgroundColor: "#707070",
-                        border:"1px rbg(100 93 93)",
-                        borderRadius:"4px",
-                        textDecorationColor:"white",
-                        width:"240px",
-                        height:"43px"
-                      
-                      }}
-                    />
-                  </div>
-                  <br />
-                  <div className="input_field">
-                    <input
-                      type="text"
-                      value={email}
-                      onChange={(e) => setUser_Email(e.target.value)}
-                      placeholder="Email"
-                      className="input"
-                      name="email"
-                      id="email"
-                      style={{
-                        backgroundColor: "#707070",
-                        border:"1px rbg(100 93 93)",
-                        borderRadius:"4px",
-                        textDecorationColor:"white",
-                        width:"240px",
-                        height:"43px"
-                      }}
-                    />
-                  </div>
-                  <br />
-                  <div className="input_field">
-                    <input
-                      type="password"
-                      value={password}
-                      onChange={(e) => setUser_Password(e.target.value)}
-                      placeholder="Password"
-                      className="input"
-                      name="password"
-                      id="password"
-                      style={{
-                        backgroundColor: "#707070",
+                  <Form.Group size="lg" controlId="email">
+                  <Form.Control
+                    type="text"
+                    id="text"
+                    placeholder="Frist Name"
+                    style={{
+                     backgroundColor: "#707070",
                      border:"1px rbg(100 93 93)",
                      borderRadius:"4px",
                      textDecorationColor:"white",
-                     width:"240px",
-                        height:"43px"
-                      }}
-                    />
+                     width:"250px"
+                    }}
+                    value={user_name}
+                    onChange={(e) => setUser_name(e.target.value)}
+                     
+                  />
+                </Form.Group>
+                  </div>
+                  <br />
+                  <div className="input_field">
+                  <Form.Group size="lg" controlId="password">
+                  <Form.Control
+                    type="email"
+                    value={email}
+                    id="text"
+                    placeholder="Email"
+                    style={{
+                      backgroundColor: "#707070",
+                     border:"1px rbg(100 93 93)",
+                     borderRadius:"4px",
+                     textDecorationColor:"white",
+                     width:"250px"
+                    }}
+                    onChange={(e) => setUser_Email(e.target.value)}
+                  />
+                </Form.Group>
+                  </div>
+                  <br />
+                  <div className="input_field">
+                  <Form.Group size="lg" controlId="password">
+                  <Form.Control
+                    type="password"
+                    value={password}
+                    id="text"
+                    placeholder="Password"
+                    style={{
+                      backgroundColor: "#707070",
+                     border:"1px rbg(100 93 93)",
+                     borderRadius:"4px",
+                     textDecorationColor:"white",
+                     width:"250px"
+                    }}
+                    onChange={(e) => setUser_Password(e.target.value)}
+                  />
+                </Form.Group>
                   </div>
                   <br />
                   <div>
