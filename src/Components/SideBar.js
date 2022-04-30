@@ -217,7 +217,7 @@ export default function SideBar() {
       </AppBar>
       <Drawer variant="permanent"  open={open}>
         <DrawerHeader  >
-          <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
+          <IconButton onClick={handleDrawerClose} style={{ color: "white" }}> 
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
