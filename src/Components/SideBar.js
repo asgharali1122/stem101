@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './sidebar.css';
 import { styled, useTheme } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -16,7 +17,7 @@ import { alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 import { useState } from 'react';
-import './sidebar.css';
+
 
 const drawerWidth = 240;
 const Search = styled('div')(({ theme }) => ({
@@ -215,12 +216,12 @@ export default function SideBar() {
         </div>
       </AppBar>
       <Drawer variant="permanent"  open={open}>
-        <DrawerHeader >
+        <DrawerHeader  >
           <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
-        <div onClick={() => { window.location.href = "/profile"; }} >
+        <div onClick={() => { window.location.href = "/profile"; }} style={{ backgroundColor:'#0D223F !important'}}>
           <List  >
             {['Profile'].map((text, index) => (
               <ListItemButton
@@ -239,7 +240,7 @@ export default function SideBar() {
         </div>
         <div>
           <div  >
-            <List  onClick={() => { direction("games") }}  >
+            <List  onClick={() => { direction("games") }}   >
               {['Games'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -277,7 +278,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/teacher"; }}>
-            <List >
+            <List>
               {['Teachers'].map((text, index) => (
                 <ListItemButton
                   key={text}
