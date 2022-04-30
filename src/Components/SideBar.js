@@ -215,13 +215,13 @@ export default function SideBar() {
         </div>
       </AppBar>
       <Drawer variant="permanent"  open={open}>
-        <DrawerHeader >
-          <IconButton onClick={handleDrawerClose} style={{ color: "white" }}>
+        <DrawerHeader style={{backgroundColor:"#0D223F"}} >
+          <IconButton onClick={handleDrawerClose} style={{ color: "white", backgroundColor:"#0D223F" }}>
             {theme.direction === 'rtl' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </DrawerHeader>
-        <div onClick={() => { window.location.href = "/profile"; }} >
-          <List  >
+        <div onClick={() => { window.location.href = "/profile"; }}   >
+          <List style={{backgroundColor:"#0D223F !important"}} >
             {['Profile'].map((text, index) => (
               <ListItemButton
                 key={text}
@@ -239,7 +239,7 @@ export default function SideBar() {
         </div>
         <div>
           <div  >
-            <List  onClick={() => { direction("games") }}  >
+            <List  onClick={() => { direction("games") }} style={{backgroundColor:"#0D223F"}}  >
               {['Games'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -257,8 +257,8 @@ export default function SideBar() {
           </div>
         </div>
         <div onClick={onProfile}>
-          <div onClick={() => { window.location.href = "/district"; }}>
-            <List  >
+          <div onClick={() => { window.location.href = "/district"; }} >
+            <List style={{backgroundColor:"#0D223F !important"}} >
               {['District'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -277,7 +277,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/teacher"; }}>
-            <List >
+            <List style={{backgroundColor:"#0D223F !important"}}>
               {['Teachers'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -296,7 +296,7 @@ export default function SideBar() {
         </div>
         <div onClick={onProfile}>
           <div onClick={() => { window.location.href = "/student"; }}>
-            <List >
+            <List style={{backgroundColor:"#0D223F !important"}}>
               {['Students'].map((text, index) => (
                 <ListItemButton
                   key={text}
@@ -307,7 +307,7 @@ export default function SideBar() {
                   }}
                 >
                   <img src='/images/Layer-51.png' alt='student' style={{ width: "45px", height: "33px" }} />
-                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" }} />
+                  <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} style={{ color: "white", marginLeft: "11px" , backgroundColor:"0D223F !important" }} />
                 </ListItemButton>
               ))}
             </List>
