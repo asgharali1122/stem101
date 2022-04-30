@@ -17,7 +17,9 @@ export default function Profile() {
       <Form>
         <Typography><h1 style={{ textAlign: "center" }}>Profile</h1></Typography>
         <br />
-        <Typography><h2 style={{marginLeft:"123px"}}>{username}</h2></Typography>
+        <img src="/images/Ellipse 1.png" alt="Ellipse 1" style={{height:"150px", marginLeft:"80px"}} />
+        <br/>
+        <Typography><h2 style={{marginLeft:"100px"}}>{username}</h2></Typography>
         <br/>
         <div className="user">
         </div>
@@ -68,7 +70,7 @@ export default function Profile() {
           <Form.Group size="lg" controlId="password">
             <Form.Control
               type="password"
-              placeholder="new Password here"
+              placeholder="New Password Here"
 
               style={{
                 backgroundColor: "#CFCFCF",
