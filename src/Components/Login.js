@@ -66,7 +66,7 @@ export default function Login({ authenticate }) {
                     id="text"
                     placeholder="User Name"
                     style={{
-                     backgroundColor: "#707070",
+                     backgroundColor: "rgb(198 193 193)",
                      border:"1px rbg(100 93 93)",
                      borderRadius:"4px",
                      textDecorationColor:"white"
@@ -83,7 +83,7 @@ export default function Login({ authenticate }) {
                     id="text"
                     placeholder="Password"
                     style={{
-                      backgroundColor: "#707070",
+                      backgroundColor: "rgb(198 193 193)",
                      border:"1px rbg(100 93 93)",
                      borderRadius:"4px",
                      textDecorationColor:"white"
