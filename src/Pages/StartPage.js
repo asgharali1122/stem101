@@ -6,8 +6,7 @@ const StartPage = () => {
 
   return (
     <>
-      <div className='startbody'>
-        <div className='container-fluid'>
+        <div className='container-fluid startbody'>
           <div className='row'>
             <div className='col-6'>
               <Typography>
@@ -29,9 +28,6 @@ const StartPage = () => {
 							</div>
           </div>
         </div>
-
-      </div>
-
     </>
   )
 }

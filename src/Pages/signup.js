@@ -36,8 +36,7 @@ export default function Signup() {
   };
   return (
     <>
-      <div className="signupbody">
-          <div className="container">
+          <div className="container-fluid signupbody">
             <div className="row">
             {/* <ToastContainer /> */}
               <div className="col-6" style={{ marginTop: "7%" }} >
@@ -179,8 +178,7 @@ export default function Signup() {
               </div>
             </div>
           </div>
-        
-      </div>
+      
     </>
   );
 }

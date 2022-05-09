@@ -1,9 +1,12 @@
 .startbody{
+    position: relative; 
     background-image: url(/public//Group\ 160.png);
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 657px;
-	padding: 40px 0;
+    /* Full height */
+  height: 100vh;
+  width: 100vh;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    
 }
