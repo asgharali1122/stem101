@@ -37,11 +37,10 @@ export default function Signup() {
   return (
     <>
       <div className="signupbody">
-        <div className="top">
-          <div className="container-fluid">
+          <div className="container">
             <div className="row">
             {/* <ToastContainer /> */}
-              <div className="col-6" style={{ marginTop: "7%" }}>
+              <div className="col-6" style={{ marginTop: "7%" }} >
                 <Typography>
                   <h1
                     style={{
@@ -180,7 +179,7 @@ export default function Signup() {
               </div>
             </div>
           </div>
-        </div>
+        
       </div>
     </>
   );

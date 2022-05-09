@@ -1,12 +1,32 @@
-@media all and (min-width: 480px) {
+
   .loginBody {
+    
     background-image: url(/public/Group\ 160.png);
     /* background-size: cover; */
-    height: 657px;
-    background-repeat: no-repeat;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    /* background-repeat: no-repeat;
     background-position: center center;
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
+  }
+  .tset{
+    max-width: 450px;
+    margin: 0 auto;
+    height: 100%;
+    
+   
+        background-image: url(/public/Group\ 160.png) no-repeat right bottom;
+        min-height: 317px;
+        width: 100%;
+        display: block;
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+ 
   }
 
 
@@ -26,4 +46,3 @@
   }
 
 
-}
