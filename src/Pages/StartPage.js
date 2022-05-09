@@ -19,7 +19,7 @@ const StartPage = () => {
                 <h5 style={{ color: "white", marginTop:"10px", marginLeft:"100px" }}>We partner with companies to connect students and adult learners to in-demand career pathways. Corporations and government entities partner with STEM 101 to develop real-world projects for classroom and workforce service use.</h5>
               </Typography>
               <br/>
-              <div style={{ backgroundColor: "#823606", marginLeft:"220px",  height:"60px", width:"203"}} className="btn"><a href="/login" style={{ color: "white" }}><h2>Get Started</h2> </a>
+              <div  className="btn"><a href="/login" style={{ color: "white" }}><img style={{height:"60px", marginLeft:"100px"}} src='/images/Group 161.png' alt='Group' /> </a>
               </div>
             </div>
             <div className="col-6" >
