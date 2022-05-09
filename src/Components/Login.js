@@ -91,13 +91,12 @@ export default function Login({ authenticate }) {
                     onChange={(e) => setPassword(e.target.value)}
                   />
                 </Form.Group>
+                
                 <br />
-                <Button block size="lg" style={{color:"white", backgroundColor:"#823606", height:"53px", width:"183px", marginLeft:"66px", fontFamily:"Franklin Gothic, Demi"}}  disabled={!validateForm()} onClick={login}>
-                  Log in
-                </Button>
+                  <img style={{height:"48px", marginLeft:"55px"}} block size="lg" disabled={!validateForm()} onClick={login} src="/images/Group 170.png" alt="Group" />
               </Form>
               <br/>
-              <p style={{color:"white", fontFamily:"Franklin Gothic Book, Regular", marginLeft:"215px", position:"fixed"}}>don't have an account, <a href="/signup" style={{ color: "#FF6400" }}>Sign up</a></p>
+              <p style={{color:"white", fontFamily:"Franklin Gothic Book, Regular", marginLeft:"215px", position:"fixed"}}>don't have an account, <a href="/signup"><img style={{height:"20px", marginBottom:"5px"}} src="/images/signup.png" alt="signup" /> </a></p>
               </div>
             <div className="col-6" >
               <div className="logoimg" style={{ overflow:'hidden'}}>
