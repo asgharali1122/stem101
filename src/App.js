@@ -10,7 +10,7 @@ import Student from "./Pages/Student";
 import Teacher from "./Pages/Teacher";
 import Profile from "./Pages/Profile";
 import StartPage from "./Pages/StartPage";
-
+import ResponsiveDrawer from "../src/Components/drawer";
 
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
 
   return (
     <>
-      {auth ? <SideBar /> : null}
+      {auth ? <ResponsiveDrawer /> : null}
       <BrowserRouter>
         <Routes>
           {!auth && (
