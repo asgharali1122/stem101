@@ -3,33 +3,14 @@
     position: relative; 
     background-image: url(/public/Group\ 160.png);
       /* Full height */
-  height: 100vh;
-  width: 100vh;
+    height: 100vh;
+   width: 100vh;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   
   }
-  .tset{
-    max-width: 450px;
-    margin: 0 auto;
-    height: 100%;
-    
-   
-        background-image: url(/public/Group\ 160.png) no-repeat right bottom;
-        min-height: 317px;
-        width: 100%;
-        display: block;
-        content: "";
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
- 
-  }
-
-
 
 
   .Login form {

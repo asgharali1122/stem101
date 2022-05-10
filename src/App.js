@@ -11,6 +11,8 @@ import Teacher from "./Pages/Teacher";
 import Profile from "./Pages/Profile";
 import StartPage from "./Pages/StartPage";
 
+
+
 const App = () => {
   const [auth, setAuth] = useState(null);
 

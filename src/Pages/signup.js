@@ -156,7 +156,7 @@ export default function Signup() {
                       color: "white",
                       fontFamily: "Franklin Gothic Book, Regular",
                       marginLeft: "2px",
-                      position: "fixed",
+                      // position: "fixed",
                       marginTop: "1%",
                     }}
                   >
