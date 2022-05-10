@@ -45,14 +45,16 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           {auth && (
             <>
-              <Route
+            <Route path="/dashboard" element={<ResponsiveDrawer />} />
+              {/* <Route
                 path="/game"
                 element={<GamesTable logout={() => setAuth(false)} />}
               />
+              
               <Route path="/teacher" element={<Teacher />} />
               <Route path="/student" element={<Student />} />
               <Route path="/district" element={<District />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} /> */}
             </>
           )}
         </Routes>

@@ -37,7 +37,7 @@ export default function Login({ authenticate }) {
         }
         authenticate();
         console.warn("apihit")
-        nav('/profile')
+        nav('/dashboard')
       }
     }
     else{

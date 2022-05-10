@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import SideBar from '../Components/SideBar';
+
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
@@ -112,7 +112,7 @@ export default function Teacher() {
 
   return (
     <>
-      <SideBar />
+      
       
       <div>
         <div style={{ margin: "50px", marginLeft: "250px" }}>

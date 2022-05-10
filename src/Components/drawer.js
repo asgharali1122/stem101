@@ -15,12 +15,34 @@ import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import SearchIcon from '@mui/icons-material/Search';
+
+import Profile from '../Pages/Profile';
+import GamesTable from '../Pages/Games';
+import District from '../Pages/District';
+import Teacher from '../Pages/Teacher';
+import Student from '../Pages/Student';
+import "./drawer.css";
 
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
   const { window } = props;
+  const [ comp , setComp ] = React.useState("");
   const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const project = () => {
+    switch(comp) {
+
+      case "gametable":   return <GamesTable />;
+      case "district":   return <District />;
+      case "teacher": return <Teacher />;
+      case "student":  return <Student />;
+      case "profile":  return <Profile />;
+
+      default:      return <h1>No project match</h1>
+    }
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -30,27 +52,46 @@ function ResponsiveDrawer(props) {
     <div>
       <Toolbar />
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+      <List >
+        <div className="list mt-3" onClick={()=> { setComp ("profile")}}>
+        <div className="d-flex flex-row">
+          <div className="p-2"> <img src='/images/profile.png' alt='profile' style={{ width: "100%", height: "100%" }} /></div>
+          <div className="p-2">Profile</div>
+        </div>
+        </div>
       </List>
-      <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
+        <div className='list mt-3' onClick={ () => { setComp("gametable") } }>
+          <div className='d-flex flex-row'>
+            <div className='p-2'><img src='/images/game-console.png' alt='game' style={{ width: "100%", height: "100%" }}/></div>
+            <div className='p-2'>Games</div>
+          </div>
+        </div>
       </List>
+      <List>
+        <div className='list mt-3' onClick={()=> { setComp ("district")}}>
+          <div className='d-flex flex-row'>
+            <div className='p-2'><img src='/images/building.png' alt='district' style={{ width: "100%", height: "100%" }}/></div>
+            <div className='p-2' >District</div>
+          </div>
+        </div>  
+      </List>
+      <List>
+        <div className='list mt-3' onClick={()=> { setComp ("teacher")}}>
+          <div className='d-flex flex-row'>
+            <div className='p-2'><img src="images/Layer-41.png" alt='teacher' style={{ width: "100%", height: "100%" }}/></div>
+            <div className='p-2' >Teacher</div>
+          </div>
+        </div>
+      </List>
+      <List>
+        <div className='list mt-3' onClick={()=> { setComp ("student")}}>
+          <div className='d-flex flex-row'>
+            <div className='p-2'><img src="images/Layer-51.png" alt='student' style={{ width: "100%", height: "100%" }}/></div>
+            <div className='p-2'>Student</div>
+          </div>
+        </div>
+      </List> 
     </div>
   );
 
@@ -66,7 +107,7 @@ function ResponsiveDrawer(props) {
           ml: { sm: `${drawerWidth}px` },
         }}
       >
-        <Toolbar>
+        <Toolbar style={{backgroundColor:"black"}}>
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -76,9 +117,20 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
+         
+          <div className='d-flex'>
+            <div className='p-2'> <img src='/images/Logo.png' alt='logo' style={{ width: "70%", height: "100%" }} /></div>
+            <div className='p-2'  >
+              <div class="input-group rounded" >
+              <span className="input-group-text border-0" id="search-addon" style={{backgroundColor:"black" ,color:"white"}}>
+                    <SearchIcon />
+              </span>
+                  <input type="search" className="form-control rounded" style={{ backgroundColor : '#707070' }} placeholder="Search"  aria-label="Search" aria-describedby="search-addon" />
+            </div>
+                </div>
+          </div>
+          
+          
         </Toolbar>
       </AppBar>
       <Box
@@ -118,33 +170,9 @@ function ResponsiveDrawer(props) {
         sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
       >
         <Toolbar />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non
-          enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus
-          imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus.
-          Convallis convallis tellus id interdum velit laoreet id donec ultrices.
-          Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra
-          nibh cras. Metus vulputate eu scelerisque felis imperdiet proin fermentum
-          leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt lobortis
-          feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-          consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-          sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper
-          eget nulla facilisi etiam dignissim diam. Pulvinar elementum integer enim
-          neque volutpat ac tincidunt. Ornare suspendisse sed nisi lacus sed viverra
-          tellus. Purus sit amet volutpat consequat mauris. Elementum eu facilisis
-          sed odio morbi. Euismod lacinia at quis risus sed vulputate odio. Morbi
-          tincidunt ornare massa eget egestas purus viverra accumsan in. In hendrerit
-          gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem
-          et tortor. Habitant morbi tristique senectus et. Adipiscing elit duis
-          tristique sollicitudin nibh sit. Ornare aenean euismod elementum nisi quis
-          eleifend. Commodo viverra maecenas accumsan lacus vel facilisis. Nulla
-          posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        <div className="dashBody">
+             { project() }
+        </div>
       </Box>
     </Box>
   );
