@@ -16,6 +16,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import SearchIcon from '@mui/icons-material/Search';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 import Profile from '../Pages/Profile';
 import GamesTable from '../Pages/Games';
@@ -40,7 +41,10 @@ function ResponsiveDrawer(props) {
       case "student":  return <Student />;
       case "profile":  return <Profile />;
 
-      default:      return <h1>No project match</h1>
+      default:      return <div className='stem' >
+        <h1> WELCOME TO STEM 101 </h1>
+        <img src='/images/Logo.png' alt='logo' />
+      </div>
     }
   }
 
@@ -49,7 +53,7 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <div >
       <Toolbar />
       <Divider />
       <List >
@@ -106,6 +110,7 @@ function ResponsiveDrawer(props) {
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
+        
       >
         <Toolbar style={{backgroundColor:"black"}}>
           <IconButton
@@ -118,7 +123,7 @@ function ResponsiveDrawer(props) {
             <MenuIcon />
           </IconButton>
          
-          <div className='d-flex'>
+          <div className='d-flex' >
             <div className='p-2'> <img src='/images/Logo.png' alt='logo' style={{ width: "70%", height: "100%" }} /></div>
             <div className='p-2'  >
               <div class="input-group rounded" >
@@ -127,6 +132,9 @@ function ResponsiveDrawer(props) {
               </span>
                   <input type="search" className="form-control rounded" style={{ backgroundColor : '#707070' }} placeholder="Search"  aria-label="Search" aria-describedby="search-addon" />
             </div>
+                </div>
+                <div className='logout' >
+                  <LogoutIcon/>
                 </div>
           </div>
           
@@ -137,6 +145,7 @@ function ResponsiveDrawer(props) {
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
         aria-label="mailbox folders"
+        
       >
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Drawer

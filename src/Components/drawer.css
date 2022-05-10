@@ -4,4 +4,15 @@
 .css-zxtyt4-MuiPaper-root-MuiAppBar-root{
     background-color: black important;
 }
+.logout{
+    margin-left: 350px;
+    margin-top: 12px;
+}
+.stem {
+    margin-top: 200px;
+    margin-left: 300px;
+}
 
+body{
+    background-color: #828282 !important;
+}
