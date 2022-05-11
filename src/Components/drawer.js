@@ -24,15 +24,14 @@ import District from '../Pages/District';
 import Teacher from '../Pages/Teacher';
 import Student from '../Pages/Student';
 import "./drawer.css";
-
+// import { useNavigate } from "react-router-dom";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
+  // const nav = useNavigate()
   const { window } = props;
   const [ comp , setComp ] = React.useState("");
   const [mobileOpen, setMobileOpen] = React.useState(false);
- 
-
   const project = () => {
     switch(comp) {
 
@@ -49,17 +48,17 @@ function ResponsiveDrawer(props) {
       // </div>
     }
   }
+  const logout = () => {
+    console.alert("inlogout")
+    localStorage.clear();
+    // nav('/dashboard')
+
+  }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
-  const logout = () => {
-    console.warn("inlogout")
-    localStorage.clear();
-    localStorage.setItem("user", false);
-    console.warn("after user false");
-    window.location.href = "/login";
-  }
+
 
   const drawer = (
     <div >
