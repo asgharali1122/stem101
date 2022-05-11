@@ -31,6 +31,7 @@ function ResponsiveDrawer(props) {
   const { window } = props;
   const [ comp , setComp ] = React.useState("");
   const [mobileOpen, setMobileOpen] = React.useState(false);
+ 
 
   const project = () => {
     switch(comp) {
@@ -41,16 +42,24 @@ function ResponsiveDrawer(props) {
       case "student":  return <Student />;
       case "profile":  return <Profile />;
 
-      default:      return <div className='stem' >
-        <h1> WELCOME TO STEM 101 </h1>
-        <img src='/images/Logo.png' alt='logo' />
-      </div>
+      default:      return
+      //  <div className='stem' >
+      //   <h1> WELCOME TO STEM 101 </h1>
+      //   <img src='/images/Logo.png' alt='logo' />
+      // </div>
     }
   }
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+  const logout = () => {
+    console.warn("inlogout")
+    localStorage.clear();
+    localStorage.setItem("user", false);
+    console.warn("after user false");
+    window.location.href = "/login";
+  }
 
   const drawer = (
     <div >
@@ -133,9 +142,9 @@ function ResponsiveDrawer(props) {
                   <input type="search" className="form-control rounded" style={{ backgroundColor : '#707070' }} placeholder="Search"  aria-label="Search" aria-describedby="search-addon" />
             </div>
                 </div>
-                <div className='logout' >
-                  <LogoutIcon/>
-                </div>
+                <div className="logout" onClick={logout}>
+                <LogoutIcon/>
+              </div>
           </div>
           
           

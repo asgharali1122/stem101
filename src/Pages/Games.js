@@ -111,8 +111,7 @@ export default function GamesTable() {
 
   return (
     <>
-      <div style={{marginTop:"150px"}}>
-        <div style={{ margin: "50px", marginLeft: "250px", }}>
+     <div  className='game'>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >
           <h3 className="text-center">Games</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -197,9 +196,6 @@ export default function GamesTable() {
             </TableContainer>
           </Paper>
         </div>
-
-
-      </div>
 
 
     </>

@@ -112,8 +112,7 @@ export default function District() {
 
   return (
     <>
-      <div style={{marginTop:"80px"}}>
-        <div style={{ margin: "50px", marginLeft: "250px", }}>
+    <div >
         <Paper sx={{ width: '100%', overflow: 'hidden' }} >
           <h3 className="text-center">District</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -199,9 +198,6 @@ export default function District() {
             </TableContainer>
           </Paper>
         </div>
-
-
-      </div>
 
 
     </>

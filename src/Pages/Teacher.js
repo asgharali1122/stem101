@@ -112,10 +112,7 @@ export default function Teacher() {
 
   return (
     <>
-      
-      
-      <div>
-        <div style={{ margin: "50px", marginLeft: "250px" }}>
+     <div>
           <Paper sx={{ width: '100%', overflow: 'hidden' }} >
           <h3 className="text-center">Teacher</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
@@ -201,9 +198,6 @@ export default function Teacher() {
             </TableContainer>
           </Paper>
         </div>
-
-
-      </div>
 
 
     </>
