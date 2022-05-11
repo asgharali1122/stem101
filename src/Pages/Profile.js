@@ -13,8 +13,9 @@ export default function Profile() {
 
   return (
 
-    <div className="Login">
-      <Form>
+    <div className="Login p-4" style={{backgroundColor:"white", borderRadius:"50px"}}>
+
+      <Form  >
         <Typography><h1 style={{ textAlign: "center" }}>Profile</h1></Typography>
         <br />
         <img src="/images/Ellipse 1.png" alt="Ellipse 1" style={{height:"150px", marginLeft:"80px"}} />
