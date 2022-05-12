@@ -22,10 +22,8 @@ export default function Login({ authenticate }) {
 
   const login = async () => {
     let item = { email, password }
-    console.warn(item)
     const res = await authApi.login(item)
     console.warn(res.data)
-    console.warn("statuscode",res.status)
     if((res.status)){
       if (res.data.username) {
         localStorage.setItem("username", res.data.username);
@@ -36,7 +34,6 @@ export default function Login({ authenticate }) {
 
         }
         authenticate();
-        console.warn("apihit")
         nav('/dashboard')
       }
     }

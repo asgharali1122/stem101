@@ -29,9 +29,10 @@ const App = () => {
 
   return (
     <>
-      {auth ? <ResponsiveDrawer /> : null}
+      
       <BrowserRouter>
         <Routes>
+          
           {!auth && (
             <Route
               path="/login"

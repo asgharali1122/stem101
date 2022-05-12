@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -28,7 +29,7 @@ import "./drawer.css";
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
-  // const nav = useNavigate()
+  const nav = useNavigate() 
   const { window } = props;
   const [ comp , setComp ] = React.useState("");
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -49,9 +50,8 @@ function ResponsiveDrawer(props) {
     }
   }
   const logout = () => {
-    console.alert("inlogout")
     localStorage.clear();
-    // nav('/dashboard')
+    nav('/')
 
   }
 
