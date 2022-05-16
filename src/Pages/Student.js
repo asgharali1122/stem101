@@ -8,13 +8,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Spinner from '../Components/Spinner'
 
 
 const style = {
@@ -115,6 +114,7 @@ export default function Student() {
      <div >
           <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
           <h3 className="text-center">Students</h3>
+          <Spinner />
             <TableContainer sx={{ maxHeight: 440 }} >
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
                 <TableHead>

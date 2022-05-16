@@ -15,6 +15,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Spinner from '../Components/Spinner'
 
 const style = {
   position: 'absolute',
@@ -115,6 +116,7 @@ export default function District() {
     <div >
         <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
           <h3 className="text-center">District</h3>
+          <Spinner/>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
                 <TableHead>

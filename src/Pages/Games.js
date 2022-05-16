@@ -8,13 +8,12 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Spinner from '../Components/Spinner';
 
 const style = {
   position: 'absolute',
@@ -79,7 +78,6 @@ export default function GamesTable() {
 
 
 
-
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
   };
@@ -91,6 +89,7 @@ export default function GamesTable() {
   const fetchingdata = async () => {
     const datasend = { 'role': 'game' }
     const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
+    
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
@@ -115,6 +114,7 @@ export default function GamesTable() {
           <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
           <h3 className="text-center">Games</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
+              <Spinner/>
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
                 <TableHead>
                   {/* { listdata } */}
@@ -133,8 +133,9 @@ export default function GamesTable() {
                 <TableBody>
                   {
                     data?.map((row, index) => {
-
+                    
                       return (
+                        
                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
                           <TableCell key={row.id} align={row.align}>
                             {index+1}
