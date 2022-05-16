@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import "./Signup.css";
 import authApi from "../Services/authApi"
 import axios from "axios";
 import { Typography } from "@material-ui/core";
