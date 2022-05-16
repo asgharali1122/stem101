@@ -6,6 +6,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import './District.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Grid from '@mui/material/Grid';
@@ -28,7 +29,7 @@ const style = {
 };
 
 const columns = [
-  { id: 'Sr.', label: 'Sr.', minWidth: 50 },
+  { id: 'Sr.', label: 'Sr.', minWidth: 50,  },
   { id: 'District', label: 'District', minWidth: 50 },
   {
     id: 'Catagory',
@@ -112,19 +113,20 @@ export default function District() {
   return (
     <>
     <div >
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F"}} >
           <h3 className="text-center">District</h3>
           <Spinner/>
-            <TableContainer sx={{ maxHeight: 440 }}>
-              <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
-                <TableHead>
+            <TableContainer sx={{ maxHeight: 440 }} >
+              <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%" ,}} >
+                <TableHead >
                   {/* { listdata } */}
-                  <TableRow>
+                  <TableRow >
                     {columns.map((column) => (
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth }}
+                        style={{ minWidth: column.minWidth , color:"#0D223F", fontWeight:"500"}}
+                        
                       >
                         {column.label}
                       </TableCell>

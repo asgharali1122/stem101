@@ -111,7 +111,7 @@ export default function GamesTable() {
   return (
     <>
      <div  className='game'>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
           <h3 className="text-center">Games</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Spinner/>
@@ -123,7 +123,7 @@ export default function GamesTable() {
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth }}
+                        style={{ minWidth: column.minWidth, color:"#0D223F", fontWeight:"500" }}
                       >
                         {column.label}
                       </TableCell>
