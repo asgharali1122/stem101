@@ -44,7 +44,7 @@ export default function Signup() {
                   <h1
                     style={{
                       color: "whitesmoke",
-                      marginLeft: "215px",
+                      marginLeft: "250px",
                       fontFamily: "Franklin Gothic, Demi",
                     }}
                   >
@@ -140,7 +140,7 @@ export default function Signup() {
                       backgroundColor: "#823606",
                       height: "42px",
                       width: "140px",
-                      marginLeft: "9px",
+                      marginLeft: "47px",
                       marginTop: "13px",
                       fontFamily: "Franklin Gothic, Cond Medium",
                     }}
@@ -155,12 +155,12 @@ export default function Signup() {
                     style={{
                       color: "white",
                       fontFamily: "Franklin Gothic Book, Regular",
-                      marginLeft: "2px",
+                      marginLeft: "35px",
                       // position: "fixed",
                       marginTop: "1%",
                     }}
                   >
-                    Already Have An Account?{" "}
+                     Have An Account?{" "}
                     <a href="/login" style={{ color: "#FF6400" }}>
                       Log In
                     </a>

@@ -37,14 +37,14 @@ const columns = [
     id: 'Catagory',
     label: 'Catagory',
     minWidth: 90,
-    align: 'right',
+    align: 'left',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
     id: 'Actions',
     label: 'Actions',
     minWidth: 90,
-    align: 'end',
+    align: 'left',
     format: (value) => value.toLocaleString('en-US'),
   },
 ];
@@ -113,10 +113,10 @@ export default function Teacher() {
   return (
     <>
      <div>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} >
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%"}} >
           <h3 className="text-center">Teacher</h3>
             <TableContainer sx={{ maxHeight: 440 }}>
-              <Table stickyHeader aria-label="sticky table">
+              <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}}>
                 <TableHead>
                   {/* { listdata } */}
                   <TableRow>
@@ -149,7 +149,7 @@ export default function Teacher() {
                           <div className="d-flex flex-row">
                             <div className='p-2'>
                               <Grid item xs={4}>
-                              <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
+                              <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"28px", marginTop:"2px"}}/></Button>
                                 <Modal
                                   open={open}
                                   onClose={handleClose}
@@ -184,7 +184,7 @@ export default function Teacher() {
                               <div style={{
                                   color:"red",
                                 }} >
-                               <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"10px"}} />
+                               <img src='/images/delete.png' alt='delete' style={{height:"28px", marginTop:"8px" , alignItems:"right"}} />
                                 </div>
                               </Grid>
                             </div>

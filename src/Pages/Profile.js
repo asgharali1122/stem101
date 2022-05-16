@@ -13,7 +13,7 @@ export default function Profile() {
 
   return (
 
-    <div className="Login p-4" style={{backgroundColor:"white", borderRadius:"50px"}}>
+    <div className="Login p-4" style={{backgroundColor:"white", borderRadius:"50px" , marginTop:"1%", color:"#0D223F"}}>
 
       <Form  >
         <Typography><h1 style={{ textAlign: "center" }}>Profile</h1></Typography>

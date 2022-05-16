@@ -52,7 +52,8 @@ export default function Login({ authenticate }) {
       <Form onSubmit={handleSubmit}>
           <Typography><h1 style={{
     color:"whitesmoke",
-    marginLeft:"100px",
+    marginLeft:"12%",
+    marginTop:"2%",
     fontFamily:"Franklin Gothic, Demi"
   }} >Log in</h1></Typography>
           <br />
@@ -66,6 +67,7 @@ export default function Login({ authenticate }) {
                backgroundColor: "rgb(198 193 193)",
                border:"1px rbg(100 93 93)",
                borderRadius:"4px",
+               width:"50%",
                textDecorationColor:"white"
               }}
               value={email}
@@ -83,6 +85,7 @@ export default function Login({ authenticate }) {
                 backgroundColor: "rgb(198 193 193)",
                border:"1px rbg(100 93 93)",
                borderRadius:"4px",
+               width:"50%",
                textDecorationColor:"white"
               }}
               onChange={(e) => setPassword(e.target.value)}
@@ -90,10 +93,10 @@ export default function Login({ authenticate }) {
           </Form.Group>
           
           <br />
-            <img style={{height:"48px", marginLeft:"55px"}} block size="lg" disabled={!validateForm()} onClick={login} src="/images/Group 170.png" alt="Group" />
+            <img style={{height:"40px", marginLeft:"22px"}} block size="lg" disabled={!validateForm()} onClick={login} src="/images/Group 170.png" alt="Group" />
         </Form>
         <br/>
-        <p style={{color:"white", fontFamily:"Franklin Gothic Book, Regular", marginLeft:"215px", position:"fixed"}}>don't have an account, <a href="/signup"><img style={{height:"20px", marginBottom:"5px"}} src="/images/signup.png" alt="signup" /> </a></p>
+        <p style={{color:"white", fontFamily:"Franklin Gothic Book, Regular", marginLeft:"10px", position:"fixed"}}>don't have an account, <a href="/signup"><img style={{height:"20px", marginBottom:"5px"}} src="/images/signup.png" alt="signup" /> </a></p>
         </div>
       <div className="col-6" >
         <div className="logoimg" style={{ overflow:'hidden'}}>
