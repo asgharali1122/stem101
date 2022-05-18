@@ -42,11 +42,10 @@ function ResponsiveDrawer(props) {
       case "student":  return <Student />;
       case "profile":  return <Profile />;
 
-      default:      return
-      //  <div className='stem' >
-      //   <h1> WELCOME TO STEM 101 </h1>
-      //   <img src='/images/Logo.png' alt='logo' />
-      // </div>
+      default:      return  <div className='stem' >
+        <h1> WELCOME TO STEM 101 </h1>
+        <div className='png'> <img src='/images/Logo.png' alt='logo' /></div>
+      </div>
     }
   }
   const logout = () => {
