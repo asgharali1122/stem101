@@ -125,7 +125,7 @@ export default function Teacher() {
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth , color:"#0D223F", fontWeight:"500"}}
+                        style={{ minWidth: column.minWidth , color:"#0D223F", fontWeight:"bolder"}}
                       >
                         {column.label}
                       </TableCell>
