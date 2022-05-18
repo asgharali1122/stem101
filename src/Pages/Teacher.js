@@ -113,7 +113,7 @@ export default function Teacher() {
   return (
     <>
      <div>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px",height:"240px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px",height:"210px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
           <h3 className="text-center mt-4">Teacher</h3>
           {loading ?  <Spinner />: <>
             <TableContainer sx={{ maxHeight: 440 }}>
