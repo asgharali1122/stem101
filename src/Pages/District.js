@@ -71,14 +71,12 @@ const rows = [
 
 export default function District() {
   const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [loading, setLoading] = useState(true)
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
-
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -91,32 +89,30 @@ export default function District() {
   const fetchingdata = async () => {
     const datasend = { 'role': 'district' }
     const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
-    
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
+      setLoading(false)
 
     }
   }
   useEffect(async () => {
     fetchingdata()
   }, [])
-
   const [id, setId] = useState()
   const remove = async (id) => {
     const datasend = { 'id': id, 'role': 'district' }
     const res = await axios.post("https://boardswitch.herokuapp.com/delete_user/", datasend)
     fetchingdata()
   }
-
-
   return (
     <>
     <div >
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F"}} >
-          <h3 className="text-center">District</h3>
-          <Spinner/>
-            <TableContainer sx={{ maxHeight: 440 }} >
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", height:"240px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F"}} >
+          <h3 className="text-center mt-4">District</h3>
+        {
+          loading ? <Spinner/> : <>
+           <TableContainer sx={{ maxHeight: 440 }} >
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%" ,}} >
                 <TableHead >
                   {/* { listdata } */}
@@ -126,7 +122,6 @@ export default function District() {
                         key={column.id}
                         align={column.align}
                         style={{ minWidth: column.minWidth , color:"#0D223F", fontWeight:"500"}}
-                        
                       >
                         {column.label}
                       </TableCell>
@@ -191,20 +186,16 @@ export default function District() {
                             </div>
                           </div>
                         </TableRow>
-
                       )
                     })
                   }
                 </TableBody>
               </Table>
             </TableContainer>
+           </>
+        }
           </Paper>
         </div>
-
-
     </>
-
-
-
   );
 }

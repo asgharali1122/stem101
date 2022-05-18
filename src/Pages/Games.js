@@ -70,13 +70,12 @@ const rows = [
 
 export default function GamesTable() {
   const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [loading, setLoading] = useState(true)
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -88,12 +87,11 @@ export default function GamesTable() {
   };
   const fetchingdata = async () => {
     const datasend = { 'role': 'game' }
-    const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
-    
+    const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)  
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
-
+      setLoading(false)
     }
   }
   useEffect(async () => {
@@ -107,14 +105,14 @@ export default function GamesTable() {
     fetchingdata()
   }
 
-
   return (
     <>
      <div  className='game'>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
-          <h3 className="text-center">Games</h3>
-            <TableContainer sx={{ maxHeight: 440 }}>
-              <Spinner/>
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", height:"350px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
+          <h3 className="text-center mt-4">Games</h3>
+          {loading ? <  Spinner/> : <>
+          <TableContainer sx={{ maxHeight: 440 }}>
+             
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
                 <TableHead>
                   {/* { listdata } */}
@@ -133,9 +131,7 @@ export default function GamesTable() {
                 <TableBody>
                   {
                     data?.map((row, index) => {
-                    
                       return (
-                        
                         <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
                           <TableCell key={row.id} align={row.align}>
                             {index+1}
@@ -188,20 +184,16 @@ export default function GamesTable() {
                             </div>
                           </div>
                         </TableRow>
-
                       )
                     })
                   }
                 </TableBody>
               </Table>
             </TableContainer>
+            </> } 
+            
           </Paper>
         </div>
-
-
     </>
-
-
-
   );
 }

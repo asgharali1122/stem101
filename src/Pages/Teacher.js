@@ -71,6 +71,7 @@ const rows = [
 
 export default function Teacher() {
   const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [loading, setLoading] = useState (true);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
@@ -93,6 +94,7 @@ export default function Teacher() {
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
+      setLoading(false)
 
     }
   }
@@ -111,9 +113,9 @@ export default function Teacher() {
   return (
     <>
      <div>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
-          <h3 className="text-center">Teacher</h3>
-          <Spinner/>
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px",height:"240px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
+          <h3 className="text-center mt-4">Teacher</h3>
+          {loading ?  <Spinner />: <>
             <TableContainer sx={{ maxHeight: 440 }}>
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}}>
                 <TableHead>
@@ -194,7 +196,7 @@ export default function Teacher() {
                   }
                 </TableBody>
               </Table>
-            </TableContainer>
+            </TableContainer> </>}
           </Paper>
         </div>
 

@@ -70,14 +70,13 @@ const rows = [
 ];
 
 export default function Student() {
-  const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }]);
+  const [loading, setLoading] = useState(true);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -93,7 +92,7 @@ export default function Student() {
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
-
+      setLoading(false)
     }
   }
   useEffect(async () => {
@@ -106,16 +105,13 @@ export default function Student() {
     const res = await axios.post("https://boardswitch.herokuapp.com/delete_user/", datasend)
     fetchingdata()
   }
-
-
-
   return (
     <>
-     <div >
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%", color:"#0D223F"}} >
-          <h3 className="text-center">Students</h3>
-          <Spinner />
-            <TableContainer sx={{ maxHeight: 440 }} >
+    
+     <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"778px",height:"350px", marginLeft:"140px", marginTop:"3%", color:"#0D223F"}} >
+          <h3 className="text-center mt-4">Students</h3> 
+          {loading ?  <Spinner />: <> 
+       <TableContainer sx={{ maxHeight: 440 }} >
               <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%"}} >
                 <TableHead>
                   {/* { listdata } */}
@@ -194,9 +190,12 @@ export default function Student() {
                   }
                 </TableBody>
               </Table>
-            </TableContainer>
+            </TableContainer> 
+            </>}        
           </Paper>
-        </div>
+     
+    
+    
     </>
   );
 }
