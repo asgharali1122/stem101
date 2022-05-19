@@ -67,7 +67,7 @@ function ResponsiveDrawer(props) {
         <div className="list mt-3" onClick={()=> { setComp ("profile")}}>
         <div className="d-flex flex-row">
           <div className="p-2"> <img src='/images/profile.png' alt='profile' style={{ width: "100%", height: "100%" }} /></div>
-          <div className="p-2">Profile</div>
+          <div className="p-2" style={{cursor:"grab"}} >Profile</div>
         </div>
         </div>
       </List>
@@ -75,15 +75,15 @@ function ResponsiveDrawer(props) {
         <div className='list mt-3' onClick={ () => { setComp("gametable") } }>
           <div className='d-flex flex-row'>
             <div className='p-2'><img src='/images/game-console.png' alt='game' style={{ width: "100%", height: "100%" }}/></div>
-            <div className='p-2'>Games</div>
+            <div className='p-2' style={{cursor:"grab"}}>Games</div>
           </div>
         </div>
       </List>
       <List>
         <div className='list mt-3' onClick={()=> { setComp ("district")}}>
           <div className='d-flex flex-row'>
-            <div className='p-2'><img src='/images/building.png' alt='district' style={{ width: "100%", height: "100%" }}/></div>
-            <div className='p-2' >District</div>
+            <div className='p-2'><img src='/images/building.png' alt='district' style={{ width: "100%", height: "100%",  }}/></div>
+            <div className='p-2' style={{cursor:"grab"}} >District</div>
           </div>
         </div>  
       </List>
@@ -91,7 +91,7 @@ function ResponsiveDrawer(props) {
         <div className='list mt-3' onClick={()=> { setComp ("teacher")}}>
           <div className='d-flex flex-row'>
             <div className='p-2'><img src="images/Layer-41.png" alt='teacher' style={{ width: "100%", height: "100%" }}/></div>
-            <div className='p-2' >Teacher</div>
+            <div className='p-2' style={{cursor:"grab"}} >Teacher</div>
           </div>
         </div>
       </List>
@@ -99,7 +99,7 @@ function ResponsiveDrawer(props) {
         <div className='list mt-3' onClick={()=> { setComp ("student")}}>
           <div className='d-flex flex-row'>
             <div className='p-2'><img src="images/Layer-51.png" alt='student' style={{ width: "100%", height: "100%" }}/></div>
-            <div className='p-2'>Student</div>
+            <div className='p-2' style={{cursor:"grab"}}>Student</div>
           </div>
         </div>
       </List> 
