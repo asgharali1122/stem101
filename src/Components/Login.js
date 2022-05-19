@@ -93,7 +93,7 @@ export default function Login({ authenticate }) {
           </Form.Group>
           
           <br />
-            <img style={{height:"40px", marginLeft:"22px"}} block size="lg" disabled={!validateForm()} onClick={login} src="/images/Group 170.png" alt="Group" />
+            <img style={{height:"40px", marginLeft:"22px", cursor:"pointer" }} block size="lg" disabled={!validateForm()} onClick={login} src="/images/Group 170.png" alt="Group" />
         </Form>
         <br/>
         <p style={{color:"white", fontFamily:"Franklin Gothic Book, Regular", marginLeft:"10px", position:"fixed"}}>don't have an account, <a href="/signup"><img style={{height:"20px", marginBottom:"5px"}} src="/images/signup.png" alt="signup" /> </a></p>
