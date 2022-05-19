@@ -42,7 +42,7 @@ const columns = [
     id: 'Actions',
     label: 'Actions',
     minWidth: 90,
-    align: 'end',
+    align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
 ];
@@ -108,12 +108,12 @@ export default function District() {
   return (
     <>
     <div >
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", height:"210px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F"}} >
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", height:"210px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F", borderRadius:"10px" }} >
           <h3 className="text-center mt-4">District</h3>
         {
           loading ? <Spinner/> : <>
            <TableContainer sx={{ maxHeight: 440 }} >
-              <Table stickyHeader aria-label="sticky table" style={{width:"100%", marginLeft:"8%" ,}} >
+              <Table stickyHeader aria-label="sticky table" >
                 <TableHead >
                   {/* { listdata } */}
                   <TableRow >
@@ -121,7 +121,7 @@ export default function District() {
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth , color:"#0D223F", fontWeight:"bolder"}}
+                        style={{ textAlign:"center" , color:"#0D223F", fontWeight:"bolder"}}
                       >
                         {column.label}
                       </TableCell>
@@ -132,17 +132,17 @@ export default function District() {
                   {
                     data?.map((row , index) => {
                       return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
-                          <TableCell key={row.id} align={row.align}>
+                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} style={{textAlign:"center"}} >
+                          <TableCell key={row.id} align={row.align} style={{textAlign:"center"}}>
                             {index+1}
                           </TableCell>
-                          <TableCell key={row.district} align={row.district}>
+                          <TableCell key={row.district} align={row.district} style={{textAlign:"center"}}>
                             {row.district}
                           </TableCell>
-                          <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
+                          <TableCell key={row.category} align={row.category} style={{textAlign:"center"}}>
                             {row.category}
                           </TableCell>
-                          <div className="d-flex flex-row">
+                          <div className="d-flex justify-content-center">
                             <div className='p-2 '>
                               <Grid item xs={4}>
                                 <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"28px", marginTop:"2px"}}/></Button>

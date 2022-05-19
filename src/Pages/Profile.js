@@ -13,14 +13,14 @@ export default function Profile() {
 
   return (
 
-    <div className="Login p-4" style={{backgroundColor:"white", borderRadius:"50px" , marginTop:"1%", color:"#0D223F"}}>
+    <div className="Login p-4" style={{backgroundColor:"white", borderRadius:"10px" , marginTop:"1%", color:"#0D223F"}}>
 
       <Form  >
         <Typography><h1 style={{ textAlign: "center" }}>Profile</h1></Typography>
         <br />
         <img src="/images/Ellipse 1.png" alt="Ellipse 1" style={{height:"150px", marginLeft:"80px"}} />
         <br/>
-        <Typography><h2 style={{marginLeft:"100px"}}>{username}</h2></Typography>
+        <Typography style={{textAlign:"center"}}><h2>{username}</h2></Typography>
         <br/>
         <div className="user">
         </div>
