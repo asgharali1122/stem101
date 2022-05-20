@@ -15,7 +15,7 @@ const StartPage = () => {
                   Connecting communities.
                 </h1>
                 <br />
-                <h5 style={{ color: "white", marginTop:"10px", marginLeft:"100px" }}>We partner with companies to connect students and adult learners to in-demand career pathways. Corporations and government entities partner with STEM 101 to develop real-world projects for classroom and workforce service use.</h5>
+                <p style={{ color: "white", marginTop:"10px", marginLeft:"100px",WebkitUserModify:"read-write-plaintext-only" }}>We partner with companies to connect students and adult learners to in-demand career pathways. Corporations and government entities partner with STEM 101 to develop real-world projects for classroom and workforce service use.</p>
               </Typography>
               <br/>
               <div  className="btn"><a href="/login" style={{ color: "white" }}><img style={{height:"60px", marginLeft:"100px"}} src='/images/Group 161.png' alt='Group' /> </a>

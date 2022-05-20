@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./style.css";
+import "./Signup.css";
 import authApi from "../Services/authApi"
 import axios from "axios";
 import { Typography } from "@material-ui/core";
@@ -26,25 +26,23 @@ export default function Signup() {
 
   if (res.status == 200){
     toast.success("Account Created Successfully")
-    alert("Account Created Successfully")
     navigate("/login")
   }
   else if (res.response.status == 400){
     toast.error("user already exists")
-    alert("user already exists")
   }
   };
   return (
     <>
+  
           <div className="container-fluid signupbody">
             <div className="row">
-            {/* <ToastContainer /> */}
               <div className="col-6" style={{ marginTop: "7%" }} >
                 <Typography>
                   <h1
                     style={{
                       color: "whitesmoke",
-                      marginLeft: "215px",
+                      marginLeft: "250px",
                       fontFamily: "Franklin Gothic, Demi",
                     }}
                   >
@@ -140,7 +138,7 @@ export default function Signup() {
                       backgroundColor: "#823606",
                       height: "42px",
                       width: "140px",
-                      marginLeft: "9px",
+                      marginLeft: "47px",
                       marginTop: "13px",
                       fontFamily: "Franklin Gothic, Cond Medium",
                     }}
@@ -149,18 +147,19 @@ export default function Signup() {
                   >
                     Sign Up
                   </div>
+                  <ToastContainer />
                   <br />
                   <br />
                   <p
                     style={{
                       color: "white",
                       fontFamily: "Franklin Gothic Book, Regular",
-                      marginLeft: "2px",
+                      marginLeft: "35px",
                       // position: "fixed",
                       marginTop: "1%",
                     }}
                   >
-                    Already Have An Account?{" "}
+                     Have An Account?{" "}
                     <a href="/login" style={{ color: "#FF6400" }}>
                       Log In
                     </a>

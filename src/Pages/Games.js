@@ -8,13 +8,13 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Spinner from '../Components/Spinner';
+import { ToastContainer, toast } from 'react-toastify';
 
 const style = {
   position: 'absolute',
@@ -29,7 +29,7 @@ const style = {
 };
 
 const columns = [
-  { id: 'Sr.', label: 'Sr.', minWidth: 50 },
+  { id: 'Sr.', label: 'Sr.', minWidth: 50 },  
   { id: 'Games', label: 'Games', minWidth: 50 },
   {
     id: 'Catagory',
@@ -41,9 +41,10 @@ const columns = [
   {
     id: 'Actions',
     label: 'Actions',
-    minWidth: 90,
-    align: 'end',
+    minWidth: 150,
+    textalign:"center",
     format: (value) => value.toLocaleString('en-US'),
+    
   },
 ];
 
@@ -71,14 +72,12 @@ const rows = [
 
 export default function GamesTable() {
   const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [loading, setLoading] = useState(true)
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-
-
-
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -90,11 +89,11 @@ export default function GamesTable() {
   };
   const fetchingdata = async () => {
     const datasend = { 'role': 'game' }
-    const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
+    const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)  
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
-
+      setLoading(false)
     }
   }
   useEffect(async () => {
@@ -106,50 +105,53 @@ export default function GamesTable() {
     const datasend = { 'id': id, 'role': 'game' }
     const res = await axios.post("https://boardswitch.herokuapp.com/delete_user/", datasend)
     fetchingdata()
+    toast.error("Successfuly Deleted Game")
   }
-
 
   return (
     <>
-      <div style={{marginTop:"150px"}}>
-        <div style={{ margin: "50px", marginLeft: "250px", }}>
-          <Paper sx={{ width: '100%', overflow: 'hidden' }} >
-          <h3 className="text-center">Games</h3>
-            <TableContainer sx={{ maxHeight: 440 }}>
-              <Table stickyHeader aria-label="sticky table" >
-                <TableHead>
+    <ToastContainer />
+     <div  className='game'>
+          <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"110px", marginTop:"3%", color:"#0D223F", borderRadius:"10px"}} >
+          <h3 className="text-center mt-4">Games</h3>
+          {loading ? <  Spinner/> : <>
+          <TableContainer sx={{ maxHeight: 440 }} >
+              <Table stickyHeader aria-label="sticky table"  >
+                <TableHead > 
                   {/* { listdata } */}
-                  <TableRow>
+                  <TableRow  >
                     {columns.map((column) => (
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth }}
+                        style={{ textAlign:"center",  color:"#0D223F", fontWeight:"bolder" }}
                       >
                         {column.label}
                       </TableCell>
                     ))}
                   </TableRow>
                 </TableHead>
+                     
                 <TableBody>
+              
                   {
                     data?.map((row, index) => {
-
                       return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
-                          <TableCell key={row.id} align={row.align}>
+                        
+                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} style={{textAlign:"center"}} >
+                          <TableCell key={row.id} align={row.align} style={{textAlign:"center"}} >
                             {index+1}
                           </TableCell>
-                          <TableCell key={row.name} align={row.name}>
-                            {row.name}
+                          <TableCell key={row.name} align={row.name} style={{textAlign:"center"}}>
+                            {row.name} 
                           </TableCell>
-                          <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
+                          <TableCell key={row.category} align={row.category} style={{ textAlign: "center" }}>
                             {row.category}
                           </TableCell>
-                          <div className="d-flex flex-row">
+                          <div className="d-flex justify-content-center" >
                             <div className='p-2'>
-                              <Grid item xs={4}>
-                              <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
+                              <Grid item xs={10}>
+                              <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"28px", marginTop:"2px"}}/></Button>
                                 <Modal
                                   open={open}
                                   onClose={handleClose}
@@ -182,29 +184,22 @@ export default function GamesTable() {
                                 <div style={{
                                   color:"red",
                                 }} >
-                              <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"10px"}} />
+                              <img src='/images/delete.png' alt='delete' style={{height:"28px", marginTop:"8px",alignContent:"center", cursor:"pointer"}} />
                                   </div>
                               </Grid>
                             </div>
                           </div>
                         </TableRow>
-
                       )
                     })
                   }
                 </TableBody>
               </Table>
             </TableContainer>
+            </> } 
+            
           </Paper>
         </div>
-
-
-      </div>
-
-
     </>
-
-
-
   );
 }

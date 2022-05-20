@@ -10,7 +10,7 @@ import Student from "./Pages/Student";
 import Teacher from "./Pages/Teacher";
 import Profile from "./Pages/Profile";
 import StartPage from "./Pages/StartPage";
-
+import ResponsiveDrawer from "../src/Components/drawer";
 
 
 const App = () => {
@@ -29,9 +29,10 @@ const App = () => {
 
   return (
     <>
-      {auth ? <SideBar /> : null}
+      
       <BrowserRouter>
         <Routes>
+          
           {!auth && (
             <Route
               path="/login"
@@ -45,14 +46,16 @@ const App = () => {
           <Route path="/signup" element={<Signup />} />
           {auth && (
             <>
-              <Route
+            <Route path="/dashboard" element={<ResponsiveDrawer />} />
+              {/* <Route
                 path="/game"
                 element={<GamesTable logout={() => setAuth(false)} />}
               />
+              
               <Route path="/teacher" element={<Teacher />} />
               <Route path="/student" element={<Student />} />
               <Route path="/district" element={<District />} />
-              <Route path="/profile" element={<Profile />} />
+              <Route path="/profile" element={<Profile />} /> */}
             </>
           )}
         </Routes>

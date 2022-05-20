@@ -6,15 +6,18 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+import './District.css';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import DeleteIcon from '@mui/icons-material/Delete';
 import Grid from '@mui/material/Grid';
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import Spinner from '../Components/Spinner'
+import { ToastContainer, toast } from 'react-toastify';
+
+
 
 const style = {
   position: 'absolute',
@@ -29,7 +32,7 @@ const style = {
 };
 
 const columns = [
-  { id: 'Sr.', label: 'Sr.', minWidth: 50 },
+  { id: 'Sr.', label: 'Sr.', minWidth: 50,  },
   { id: 'District', label: 'District', minWidth: 50 },
   {
     id: 'Catagory',
@@ -42,7 +45,7 @@ const columns = [
     id: 'Actions',
     label: 'Actions',
     minWidth: 90,
-    align: 'end',
+    align: 'center',
     format: (value) => value.toLocaleString('en-US'),
   },
 ];
@@ -71,61 +74,52 @@ const rows = [
 
 export default function District() {
   const [data, setData] = useState([{ 'role1': 'student1' }, { 'role2': 'student2' }])
+  const [loading, setLoading] = useState(true)
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-
-
-
-  const handleChangePage = (event, newPage) => {
-    setPage(newPage);
-  };
-
-  const handleChangeRowsPerPage = (event) => {
-    setRowsPerPage(+event.target.value);
-    setPage(0);
-  };
+ 
   const fetchingdata = async () => {
     const datasend = { 'role': 'district' }
     const res = await axios.post("https://boardswitch.herokuapp.com/get_user/", datasend)
-    
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
+      setLoading(false)
 
     }
   }
   useEffect(async () => {
     fetchingdata()
   }, [])
-
   const [id, setId] = useState()
   const remove = async (id) => {
     const datasend = { 'id': id, 'role': 'district' }
     const res = await axios.post("https://boardswitch.herokuapp.com/delete_user/", datasend)
     fetchingdata()
+    toast.error("Successfuly Deleted District")
   }
-
-
   return (
     <>
-      <div style={{marginTop:"80px"}}>
-        <div style={{ margin: "50px", marginLeft: "250px", }}>
-        <Paper sx={{ width: '100%', overflow: 'hidden' }} >
-          <h3 className="text-center">District</h3>
-            <TableContainer sx={{ maxHeight: 440 }}>
+    <div >
+    <ToastContainer />
+        <Paper sx={{ width: '100%', overflow: 'hidden' }} style={{width:"850px", marginLeft:"100px", marginTop:"3%" , color:"#0D223F", borderRadius:"10px" }} >
+          <h3 className="text-center mt-4">District</h3>
+        {
+          loading ? <Spinner/> : <>
+           <TableContainer sx={{ maxHeight: 440 }} >
               <Table stickyHeader aria-label="sticky table" >
-                <TableHead>
+                <TableHead >
                   {/* { listdata } */}
-                  <TableRow>
+                  <TableRow >
                     {columns.map((column) => (
                       <TableCell
                         key={column.id}
                         align={column.align}
-                        style={{ minWidth: column.minWidth }}
+                        style={{ textAlign:"center" , color:"#0D223F", fontWeight:"bolder"}}
                       >
                         {column.label}
                       </TableCell>
@@ -136,20 +130,20 @@ export default function District() {
                   {
                     data?.map((row , index) => {
                       return (
-                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} >
-                          <TableCell key={row.id} align={row.align}>
+                        <TableRow hover role="checkbox" tabIndex={-1} key={row.code} style={{textAlign:"center"}} >
+                          <TableCell key={row.id} align={row.align} style={{textAlign:"center"}}>
                             {index+1}
                           </TableCell>
-                          <TableCell key={row.district} align={row.district}>
+                          <TableCell key={row.district} align={row.district} style={{textAlign:"center"}}>
                             {row.district}
                           </TableCell>
-                          <TableCell key={row.category} align={row.category} style={{ textAlign: "inherit" }}>
+                          <TableCell key={row.category} align={row.category} style={{textAlign:"center"}}>
                             {row.category}
                           </TableCell>
-                          <div className="d-flex flex-row">
+                          <div className="d-flex justify-content-center">
                             <div className='p-2 '>
                               <Grid item xs={4}>
-                                <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"30px", marginTop:"2px"}}/></Button>
+                                <Button onClick={handleOpen}><img src='/images/action.png' alt='action' style={{height:"28px", marginTop:"2px"}}/></Button>
                                 <Modal
                                   open={open}
                                   onClose={handleClose}
@@ -161,7 +155,7 @@ export default function District() {
                                       <div>
                                         <h4>Update the info</h4>
                                         <form>
-                                          <div className="form-group">
+                                          <div className="form-group" >
                                             <input type="text" className="form-control" id="exampleInputText" placeholder="Sr." />
                                           </div>
                                           <div className="form-group">
@@ -184,29 +178,22 @@ export default function District() {
                               <div style={{
                                   color:"red",
                                 }} >
-                                <img src='/images/delete.png' alt='delete' style={{height:"30px", marginTop:"2px"}} />
+                                <img src='/images/delete.png' alt='delete' style={{height:"28px", marginTop:"8px"}} />
                                 </div>
                               </Grid>
                             </div>
                           </div>
                         </TableRow>
-
                       )
                     })
                   }
                 </TableBody>
               </Table>
             </TableContainer>
+           </>
+        }
           </Paper>
         </div>
-
-
-      </div>
-
-
     </>
-
-
-
   );
 }
