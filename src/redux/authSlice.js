@@ -1,58 +1,39 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-import authAPI from '../sevices/auth_API';
 
 const initialState = {
   userid: null,
   username: null,
   access: null,
   refresh: null,
-  user: {},
-  userRequestStatus: '',
-  token: '',
-  userProfile: {},
-  userEntity: {},
-  userEntityRequestStatus: '',
+  value:0,
 };
 
-const getUserProfileAsync = createAsyncThunk(
-  'auth/getUserProfile',
-  async () => {
-    return fetch('https://jsonplaceholder.typicode.com/posts').then((res) => res.json())
-  }
-);
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    login: (state, action) => {
-      state.token = action.payload;
+    authenticate: (state, action) => {
+      state.value += 1
+      // console.log("action.payload","action");
+      // state.userid = action.payload.userid;
+      // state.username = action.payload.username;
+      // state.access = action.payload.access;
+      // state.refresh = action.payload.refresh;
     },
-    setUser: (state, action) => {
-      state.user = action.payload;
+    increment: (state) => {
+      state.value += 1
     },
-    logout: (state) => {
-      return initialState;
+    decrement: (state) => {
+      state.value -= 1
     },
-    updateAuthUser: (state, action) => {
-      state.user = { ...state.user, ...action.payload };
-    },
-  },
-  extraReducers: {
-    [getUserProfileAsync.pending]: (state) => {
-      state.userProfileRequestStatus = 'pending';
-    },
-    [getUserProfileAsync.rejected]: (state, action) => {
-      state.userProfileRequestStatus = 'rejected';
-    },
-    [getUserProfileAsync.fulfilled]: (state, action) => {
-      state.userProfileRequestStatus = 'fulfilled';
-      state.userProfile = action?.payload;
+    incrementByAmount: (state, action) => {
+      state.value += action.payload
     },
   },
 });
 
-export const { login, logout, setUser, updateAuthUser } = authSlice.actions;
-export { getUserProfileAsync }; 
+export const { increment, decrement, incrementByAmount , authenticate} = authSlice.actions;
+
 export default authSlice.reducer;
