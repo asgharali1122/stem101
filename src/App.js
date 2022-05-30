@@ -46,7 +46,7 @@ const App = () => {
           
           <Route path="/" element={<StartPage/>}/>          
           <Route path="/signup" element={<Signup />} />
-          <Route path="/practice" element={<Practice/>} />
+          {/* <Route path="/practice" element={<Practice/>} /> */}
         
           {auth && (
             <>
