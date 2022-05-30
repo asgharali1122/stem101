@@ -93,7 +93,7 @@ export default function GamesTable() {
     if (res.status = 200) {
       console.warn(res.data)
       setData(res.data)
-      setLoading(false)
+    setLoading(false)  
     }
   }
   useEffect(async () => {

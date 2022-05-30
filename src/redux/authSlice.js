@@ -29,6 +29,7 @@ const authSlice = createSlice({
       state.value -= 1
     },
     incrementByAmount: (state, action) => {
+      console.log("valus", action.payload)
       state.value += action.payload
     },
   },

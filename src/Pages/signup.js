@@ -23,18 +23,21 @@ export default function Signup() {
   const register = async () => {
     let item = { user_name, email, password, role, postal, district };
     const res = await authApi.register(item)
+    
 
   if (res.status == 200){
-    toast.success("Account Created Successfully")
     navigate("/login")
+    toast.update("Account Created Successfully")
   }
   else if (res.response.status == 400){
-    toast.error("user already exists")
+    toast.error("User Already Exists")
   }
   };
   return (
     <>
-  
+          <div >
+            <ToastContainer/>
+          </div>
           <div className="container-fluid signupbody">
             <div className="row">
               <div className="col-6" style={{ marginTop: "7%" }} >
@@ -169,9 +172,9 @@ export default function Signup() {
               <div className="col-6">
                 <div className="logoimg" style={{ overflow: "hidden" }}>
                   <img
-                    src="/images/Group 158.png"
+                    src="/images/Logo.png"
                     alt="group"
-                    style={{ height: "50%", width: "88%", marginTop: "18%" }}
+                    style={{ height: "50%", width: "88%", marginTop: "30%" }}
                   />
                 </div>
               </div>

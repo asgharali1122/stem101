@@ -23,7 +23,7 @@ const StartPage = () => {
             </div>
             <div className="col-6" >
 									<div className="logoimg" style={{ overflow:'hidden'}}>
-              <img src="/images/Group 158.png" alt="group" style={{height:'50%', width:'70%', marginTop:'31%', marginLeft:"70px"}}/>
+              <img src="/images/Logo.png" alt="group" style={{height:'50%', width:'70%', marginTop:'31%', marginLeft:"70px"}}/>
               </div>	
 							</div>
           </div>

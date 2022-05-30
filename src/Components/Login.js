@@ -5,12 +5,15 @@ import "./Login.css";
 import { Typography } from "@mui/material";
 import authApi from "../Services/authApi"
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import Spinner from "./Spinner";
 
 
 export default function Login({ authenticate }) {
   const nav = useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false)
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -21,32 +24,41 @@ export default function Login({ authenticate }) {
   }
 
   const login = async () => {
+    setLoading(true)
     let item = { email, password }
     const res = await authApi.login(item)
+    
     console.warn(res.data)
     if((res.status)){
-      if (res.data.username) {
-        localStorage.setItem("username", res.data.username);
-        localStorage.setItem("password", res.data.password);
-        localStorage.setItem("date_joined", res.data.date_joined);
-        if (res.data.email) {
-          localStorage.setItem("email", res.data.email);
+      if (res.data.user_info.username) {
+        localStorage.setItem("username", res.data.user_info.username);
+        localStorage.setItem("date_joined", res.data.date);
+        // localStorage.setItem("user", true);
+        
+        if (res.data.user_info.email) {
+          localStorage.setItem("email", res.data.user_info.email);
 
         }
         authenticate();
+        // setLoading(false)
         nav('/dashboard')
       }
     }
     else{
-      console.warn("in else")
-      alert("Error something went wrong");
+      setLoading(false)
+      toast.error ("Something Went Wrong")
+      
     }
   }
 
   return (
     
     <div className="container-fluid loginBody ">
+      <ToastContainer />
     <div className="row">
+      <div style={{marginTop:"auto"}}>
+      {loading ? <Spinner /> : <></>}
+      </div>
       <div className="col-2"></div>
       <div className="col-4" style={{marginTop:"11%"}}>  
       <Form onSubmit={handleSubmit}>
@@ -100,7 +112,7 @@ export default function Login({ authenticate }) {
         </div>
       <div className="col-6" >
         <div className="logoimg" style={{ overflow:'hidden'}}>
-        <img src="/images/Group 158.png" alt="group" style={{height:'50%', width:'88%', marginTop:'18%'}}/>
+        <img src="/images/Logo.png" alt="group" style={{height:'50%', width:'88%', marginTop:'40%'}}/>
         </div>
       </div>
     </div>

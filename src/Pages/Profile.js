@@ -6,7 +6,6 @@ import { Typography } from "@mui/material";
 
 export default function Profile() {
   const username = localStorage.getItem("username");
-  const password = localStorage.getItem("password");
   const email = localStorage.getItem("email");
   const date = localStorage.getItem("date_joined");
 

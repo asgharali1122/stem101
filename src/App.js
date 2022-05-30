@@ -11,6 +11,8 @@ import Teacher from "./Pages/Teacher";
 import Profile from "./Pages/Profile";
 import StartPage from "./Pages/StartPage";
 import ResponsiveDrawer from "../src/Components/drawer";
+import Practice from "./Pages/Practice";
+
 
 
 const App = () => {
@@ -42,11 +44,14 @@ const App = () => {
             
 )}
           
-          <Route path="/" element={<StartPage/>}/>
+          <Route path="/" element={<StartPage/>}/>          
           <Route path="/signup" element={<Signup />} />
+          <Route path="/practice" element={<Practice/>} />
+        
           {auth && (
             <>
             <Route path="/dashboard" element={<ResponsiveDrawer />} />
+            
               {/* <Route
                 path="/game"
                 element={<GamesTable logout={() => setAuth(false)} />}
